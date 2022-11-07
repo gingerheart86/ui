@@ -3,9 +3,9 @@ function AllEventsSection(props) {
 
   return (
     <section>
-      <div className="h-[22rem] p-4 flex items-end pb-10">
+      <div className="p-4 flex items-end pb-10">
         <div className="w-2/4 h-[70%] flex flex-col justify-between">
-          <h2 className="text-4xl">All Events</h2>
+          <h2 className="text-4xl py-10">All Events</h2>
           <p className="text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             aliquam orci nec elit congue sodales a quis erat. Quisque eget est

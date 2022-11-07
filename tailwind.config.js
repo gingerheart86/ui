@@ -15,7 +15,7 @@ module.exports = {
         desciblue: '#0A22F5',
         descired: '#FF1414',
         descigrey: '#F5F5F5',
-        descigreyfont: '#B1B1B1'
+        descigreyfont: '#464646'
       },
     },
   },

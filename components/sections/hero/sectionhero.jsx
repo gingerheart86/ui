@@ -1,5 +1,5 @@
 import ArrowDown from "../../icons/ArrowDown";
-import ArrowDownRight from "../../icons/arrowDownRight";
+import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
 
 function HeroSection() {
@@ -37,7 +37,7 @@ function HeroSection() {
                     <href>Subscribe to event calendar</href>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
-                    <ArrowDownRight />
+                    <ArrowDownRight color="black"/>
                   </div>
                 </li>
               </ul>

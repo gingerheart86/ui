@@ -24,9 +24,8 @@ function ContributorsSection() {
       <ul>
         <div className="flex flex-wrap p-4">
           {contributors.map((contributor) => (
-            <li className="mr-4 mb-4">
+            <li className="mr-4 mb-4" key={contributor.id}>
               <a
-                key={contributor.id}
                 href={contributor.twitterLink}
                 target="_blank"
                 rel={"noreferrer"}

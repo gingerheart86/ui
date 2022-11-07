@@ -15,7 +15,7 @@ function PartnerLogoSection() {
       <ul>
         <div className="flex flex-wrap p-4">
           {partners.map((partner) => (
-            <li className="mr-20 mb-4 hover:scale-110 duration-100">
+            <li className="mr-20 mb-4 hover:scale-110 duration-100 " key={partner.id}>
               <a href={partner.Link} target="_blank" rel={"noreferrer"}>
                 <div className=" w-40 flex items-center justify-center h-20">
                   <div className="relative grayscale">

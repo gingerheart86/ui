@@ -13,12 +13,15 @@ function PartnerLogoSection() {
         </div>
       </div>
       <ul>
-        <div className="flex flex-wrap p-4">
+        <div className="flex flex-wrap items-center justify-center p-4 bg-red-400">
           {partners.map((partner) => (
-            <li className="mr-20 mb-4 hover:scale-110 duration-100 " key={partner.id}>
+            <li
+              className="mr-20 mb-4 hover:scale-105 duration-100 "
+              key={partner.id}
+            >
               <a href={partner.Link} target="_blank" rel={"noreferrer"}>
-                <div className=" w-40 flex items-center justify-center h-20">
-                  <div className="relative grayscale">
+                <div className=" w-40 flex items-center justify-center">
+                  <div className="relative grayscale hover:grayscale-0">
                     <img src={partner.image} layout="fill" objectFit="cover" />
                   </div>
                 </div>

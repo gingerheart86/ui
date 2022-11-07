@@ -9,6 +9,7 @@ import VideoSection from "../components/sections/videos/sectionvideos";
 import ContributeSection from "../components/sections/ contribute/sectioncontribute";
 import ContributorsSection from "../components/sections/ contribute/sectioncontributors";
 import PartnerLogoSection from "../components/sections/partners/sectionpartners";
+import Footer from "../components/sections/footer/footer";
 
 
 export default function Home(props) {
@@ -24,6 +25,7 @@ export default function Home(props) {
       <ContributeSection />
       <ContributorsSection events={events}/>
       <PartnerLogoSection />
+      <Footer />
     </>
   );
 }

@@ -29,7 +29,23 @@ const DUMMY_PARTNERS = [
     twitter: "@ValleyDAO",
     Link: "https://psydao.io/",
     image:
-      "https://pbs.twimg.com/profile_images/1547904716570386435/9EKVxeyM_400x400.jpg",
+      "/images/psydao-logo.png",
+  },
+  {
+    id: "5",
+    name: "bio.xyz",
+    twitter: "@bio_xyz",
+    Link: "https://www.bio.xyz/",
+    image:
+      "https://uploads-ssl.webflow.com/62873e140841d3b072b63035/632302705ff61a2d0b5ca0d5_logo.svg",
+  },
+  {
+    id: "6",
+    name: "Blockchain for Science",
+    twitter: "@science_b0",
+    Link: "https://www.blockchainforscience.com/",
+    image:
+      "https://uploads-ssl.webflow.com/61e91d0563b3f4255e8d141f/61e9895704289eaac032e65f_WPHeader-p-500.png",
   },
 ];
 

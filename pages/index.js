@@ -8,6 +8,7 @@ import ResourcesSectionTwo from "../components/sections/resources/sectionresourc
 import VideoSection from "../components/sections/videos/sectionvideos";
 import ContributeSection from "../components/sections/ contribute/sectioncontribute";
 import ContributorsSection from "../components/sections/ contribute/sectioncontributors";
+import PartnerLogoSection from "../components/sections/partners/sectionpartners";
 
 
 export default function Home(props) {
@@ -22,6 +23,7 @@ export default function Home(props) {
       <VideoSection />
       <ContributeSection />
       <ContributorsSection events={events}/>
+      <PartnerLogoSection />
     </>
   );
 }

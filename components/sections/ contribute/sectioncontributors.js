@@ -4,7 +4,6 @@ import { getAllContributors } from "../../../dummy-data-contributor.js";
 
 function ContributorsSection() {
   const contributors = getAllContributors();
-  console.log(contributors);
 
   return (
     <section className="pb-20">
@@ -27,6 +26,7 @@ function ContributorsSection() {
           {contributors.map((contributor) => (
             <li className="mr-4 mb-4">
               <a
+                key={contributor.id}
                 href={contributor.twitterLink}
                 target="_blank"
                 rel={"noreferrer"}
@@ -34,6 +34,7 @@ function ContributorsSection() {
                 <div className="grid h-40 w-40">
                   <div className=" h-[100%] relative grayscale">
                     <Image
+                      alt={contributor.name}
                       src={contributor.image}
                       layout="fill"
                       objectFit="cover"

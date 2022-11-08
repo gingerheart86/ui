@@ -22,22 +22,22 @@ function Footer() {
             <div className="h-full min-w-[50%] flex items-center justify-end">
               <ul className="flex flex-col items-end text-lg">
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     about
                   </a>
                 </li>
                 <li>
-                  <a href="https://molecule.to/" target="_blank" rel="noreferrer">
+                  <a href="https://molecule.to/" target="_blank" rel={"noreferrer"}>
                     molecule
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     about
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     faq
                   </a>
                 </li>
@@ -46,22 +46,22 @@ function Footer() {
             <div className="h-full w-full flex items-center justify-end text-lg pr-[8%]">
               <ul className="flex flex-col items-end text-lg">
                 <li>
-                  <a href="https://twitter.com/desci_global" target="_blank" rel="noreferrer">
+                  <a href="https://twitter.com/desci_global" target="_blank" rel={"noreferrer"}>
                     twitter
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     instagram
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     privacy policy
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer">
+                  <a href="" target="_blank" rel={"noreferrer"}>
                     terms & conditions
                   </a>
                 </li>
@@ -73,7 +73,7 @@ function Footer() {
               Copyright 2022 Desci.Global ©
             </div>
             <div className="bg-white h-[100%] w-[50%] flex items-center justify-end text-lg pr-[8%]">
-              <a href="https://openprest.com/" target="_blank" rel="noreferrer">
+              <a href="https://openprest.com/" target="_blank" rel={"noreferrer"}>
                 Designed with Openprest®
               </a>
             </div>

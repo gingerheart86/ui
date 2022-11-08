@@ -1,7 +1,15 @@
 import RoundArrowLeft from "../../icons/RoundArrowLeft";
 import RoundArrowRight from "../../icons/RoundArrowRight";
+import {getFeaturedEvents} from "../../../dummy-data";
+
+
+
 
 function FeaturedSection() {
+
+  const events = getFeaturedEvents();
+
+
   return (
     <section>
       <div className="pl-4 h-[38rem] flex">
@@ -18,9 +26,9 @@ function FeaturedSection() {
             </div>
           </div>
           <div className="flex w-full space-x-4 text-2xl h-10 items-center">
-            <p>Desci Zurich</p>
-            <p className="opacity-50">Desci Boston</p>
-            <p className="opacity-30">Desci Zurich</p>
+            <p>{events[0].title}</p>
+            <p className="opacity-50">{events[1].title}</p>
+            <p className="opacity-30">{events[2].title}</p>
           </div>
           <div className="pt-2 pb-2">
             <p className="text-lg">

@@ -10,8 +10,7 @@ import ContributeSection from "../components/sections/ contribute/s-contribute";
 import ContributorsSection from "../components/sections/ contribute/s-contributors";
 import PartnerLogoSection from "../components/sections/partners/s-partners";
 import Footer from "../components/sections/footer/footer";
-import Backdrop from "../components/modal/backdrop";
-import Modal from "../components/modal/modal";
+import CarouselTest from "../components/sections/featured/carousel";
 
 
 export default function Home(props) {
@@ -19,7 +18,7 @@ export default function Home(props) {
   return (
     <>
       <HeroSection />
-      <FeaturedSection />
+      <CarouselTest />
       <AllEventsSection events={events} />
       <ResourcesSectionOne />
       <ResourcesSectionTwo />

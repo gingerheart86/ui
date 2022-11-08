@@ -9,3 +9,69 @@ html {
 .calc {
     left: calc(50% - 15rem);
 }
+
+
+
+/* style for prev/next button */
+.carousel-slider .arrow-left {
+  position: absolute;
+  top: 7.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0;
+  left: 16px !important;
+  z-index: 99;
+}
+
+.carousel-slider .arrow-left > span {
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.carousel-slider .arrow-right {
+  position: absolute;
+  top: 7.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0;
+  left: 45px !important;
+  z-index: 99;
+}
+.carousel-slider .arrow-right:hover {
+  scale: 130%;
+  transition: 0.2s;
+}
+.carousel-slider .arrow-left:hover {
+  scale: 130%;
+  transition: 0.2s;
+}
+
+.carousel-slider .arrow-left:active {
+  scale: 110%;
+  transition: 0.2s;
+}
+
+.carousel-slider .arrow-right:active {
+  scale: 110%;
+  transition: 0.2s;
+}
+
+/* hide prev/next button in mobile client */
+@media (max-width: 991.98px) {
+  .carousel-slider .arrow-left {
+    display: none;
+  }
+
+  .carousel-slider .arrow-right {
+    display: none;
+  }
+}

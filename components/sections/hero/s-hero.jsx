@@ -2,20 +2,27 @@ import ArrowDown from "../../icons/ArrowDown";
 import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
 import Backdrop from "../../modal/backdrop";
-import ModalEventCalender from "../../modal/modal-event-cal";
+import ModalSubmitMail from "../../modal/modal-submit-mail";
 import {useState} from "react";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 
 function HeroSection() {
+
   const [modalIsOpen, setModalisOpen] = useState(false);
+
 
   function openModalHandler() {
     setModalisOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModalHandler() {
     setModalisOpen(false);
+    document.body.style.overflow = 'scroll';
   }
+
+  
 
   return (
     <section>
@@ -51,7 +58,7 @@ function HeroSection() {
                 </li>
                 <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer" onClick={openModalHandler}>
                   <div className="w-full text-xl border-solid border-white p-2 border-b ">
-                    <href>Subscribe to event calendar</href>
+                    <a href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com" target="_blank">Subscribe to event calendar</a>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
                     <div className="group-hover/edit:rotate-45 duration-200">
@@ -65,7 +72,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      {modalIsOpen && <ModalEventCalender onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
+      {modalIsOpen && <ModalSubmitMail onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
       {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
     </section>
   );

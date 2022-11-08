@@ -1,5 +1,4 @@
-import { atcb_action, atcb_init } from 'add-to-calendar-button';
-
+import { atcb_action, atcb_init } from "add-to-calendar-button";
 
 function AllEventsSection(props) {
   const { events } = props;

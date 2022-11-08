@@ -2,8 +2,9 @@ import ArrowDown from "../../icons/ArrowDown";
 import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
 import Backdrop from "../../modal/backdrop";
-import Modal from "../../modal/modal";
+import ModalEventCalender from "../../modal/modal-event-cal";
 import {useState} from "react";
+
 
 function HeroSection() {
   const [modalIsOpen, setModalisOpen] = useState(false);
@@ -64,7 +65,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      {modalIsOpen && <Modal onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
+      {modalIsOpen && <ModalEventCalender onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
       {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
     </section>
   );

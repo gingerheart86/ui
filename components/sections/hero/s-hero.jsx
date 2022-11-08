@@ -1,8 +1,21 @@
 import ArrowDown from "../../icons/ArrowDown";
 import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
+import Backdrop from "../../modal/backdrop";
+import Modal from "../../modal/modal";
+import {useState} from "react";
 
 function HeroSection() {
+  const [modalIsOpen, setModalisOpen] = useState(false);
+
+  function openModalHandler() {
+    setModalisOpen(true);
+  }
+
+  function closeModalHandler() {
+    setModalisOpen(false);
+  }
+
   return (
     <section>
       <div className="pt-4 pr-4 pl-4 h-screen">
@@ -24,20 +37,26 @@ function HeroSection() {
             </div>
             <div class="bg-black text-white ml-2 flex items-center">
               <ul className="w-full mt-6">
-                <li className="w-full flex flex-row">
+                <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer" onClick={openModalHandler}>
                   <div className="w-full text-xl border-solid border-white p-2 border-t border-b ">
                     <href>Subscribe to future events</href>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-desciblue flex items-center justify-center">
-                    <ArrowDown />
+                    <div className="group-hover/edit:-rotate-90 duration-200">
+                      {" "}
+                      <ArrowDown />{" "}
+                    </div>
                   </div>
                 </li>
-                <li className="w-full flex flex-row">
+                <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer" onClick={openModalHandler}>
                   <div className="w-full text-xl border-solid border-white p-2 border-b ">
                     <href>Subscribe to event calendar</href>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
-                    <ArrowDownRight color="black"/>
+                    <div className="group-hover/edit:rotate-45 duration-200">
+                      {" "}
+                      <ArrowDownRight color="black" />
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -45,6 +64,8 @@ function HeroSection() {
           </div>
         </div>
       </div>
+      {modalIsOpen && <Modal onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
+      {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
     </section>
   );
 }

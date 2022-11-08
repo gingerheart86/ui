@@ -2,7 +2,7 @@ function AllEventsSection(props) {
   const { events } = props;
 
   return (
-    <section>
+    <section id="events">
       <div className="p-4 flex items-end pb-10">
         <div className="w-2/4 h-[70%] flex flex-col justify-between">
           <h2 className="text-4xl py-10">All Events</h2>

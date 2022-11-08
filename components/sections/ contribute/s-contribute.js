@@ -2,7 +2,7 @@ import ArrowUpRight from "../../icons/ArrowUpRight";
 
 function ContributeSection() {
   return (
-    <section>
+    <section id="contribute">
       <div className="flex items-center justify-center px-4 py-20 space-x-20">
         <div className="w-full h-full bg-white">
           {" "}

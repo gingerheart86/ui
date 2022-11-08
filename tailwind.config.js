@@ -8,7 +8,8 @@ module.exports = {
       backgroundImage: {
         'hero': "url('/images/hero-bg.svg')",
         'featured': "url('/images/featured-bg.png')",
-        'footer': "url(/images/footer.png)"
+        'footer': "url(/images/footer.png)",
+        'nav': 'url(/images/nav-bg.png)'
       },
       colors: {
         transparent: 'transparent',

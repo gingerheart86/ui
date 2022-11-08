@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function ResourcesSectionOne() {
   return (
-    <section>
+    <section id="resources">
       <div className="h-[100vh] flex items-center justify-center">
         <div className="h-[80%] w-[74%]">
           <h2 className="text-4xl text-black pt-5 min-h-[15%]">Resources</h2>

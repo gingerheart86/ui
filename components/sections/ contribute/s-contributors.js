@@ -39,7 +39,7 @@ function ContributorsSection() {
                       objectFit="cover"
                     />
                   </div>
-                  <div className="bg-black absolute h-40 w-40 z-40 opacity-0 text-white items-center flex justify-center hover:opacity-80 ease-in duration-100">
+                  <div className="bg-black absolute h-40 w-40 z-1 opacity-0 text-white items-center flex justify-center hover:opacity-80 ease-in duration-100">
                     {"@" + contributor.name}
                   </div>
                 </div>

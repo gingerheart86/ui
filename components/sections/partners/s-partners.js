@@ -6,7 +6,7 @@ function PartnerLogoSection() {
   const partners = getAllPartners();
 
   return (
-    <section>
+    <section id="partners">
       <div className="p-4 flex">
         <div className="w-2/4 h-[70%] flex flex-col justify-between">
           <h2 className="text-4xl pb-10">In Participation with</h2>

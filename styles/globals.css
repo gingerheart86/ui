@@ -22,7 +22,7 @@ html {
   color: #fff;
   padding: 0;
   left: 16px !important;
-  z-index: 99;
+  z-index: 2;
 }
 
 .carousel-slider .arrow-left > span {
@@ -44,7 +44,7 @@ html {
   color: #fff;
   padding: 0;
   left: 45px !important;
-  z-index: 99;
+  z-index: 1 !important;
 }
 .carousel-slider .arrow-right:hover {
   scale: 130%;

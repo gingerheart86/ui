@@ -12,10 +12,10 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
     console.log(featuredEvents);
 
     const carouselProp = {
-      showStatus: false,
+      showStatus: true,
       useKeyboardArrows: true,
-      infiniteLoop: false,
-      autoPlay: true,
+      infiniteLoop: true,
+      autoPlay: false,
       stopOnHover: true,
       emulateTouch: false,
       transitionTime: 500,

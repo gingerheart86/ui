@@ -5,7 +5,7 @@ function ModalSubmitMail() {
 
 
   return (
-    <div className="bg-white p-4 flex flex-col items-center calc w-[30rem] z-20 fixed top-[20vh] shadow-white-500/50" id="modal">
+    <div className="bg-white p-4 flex flex-col items-center calc w-[30rem] z-40 fixed top-[20vh] shadow-white-500/50" id="modal">
       <div className="h-full w-full">
         <h2 className="text-4xl pt-4 pb-12">Get the latest desci news 💌</h2>
         <div>

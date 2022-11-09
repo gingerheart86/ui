@@ -115,8 +115,6 @@ function generateYahooCalendarUrl(calendarEvent: CalendarEvent) {
   return encodedUrl;
 }
 
-
-
 const helpers = {
   formatTime (date: Date) {
     return date.toISOString().replace(/-|:|\.\d+/g, '');

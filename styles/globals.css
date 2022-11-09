@@ -95,9 +95,14 @@ html {
   border: none;
   background: none;
   color: #0A22F5;
-  text-decoration: underline;
+  
   cursor: pointer;
 }
+
+.add-to-calendar-button:hover {
+  text-decoration: underline;
+}
+
 .add-to-calendar-wrapper {
   position: relative;
   position: relative;

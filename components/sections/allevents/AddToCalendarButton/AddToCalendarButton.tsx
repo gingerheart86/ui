@@ -1,8 +1,6 @@
 import React from "react";
 import AddToCalendarButtonTooltip from "./Tooltip/AddToCalendarButtonTooltip";
 import { CalendarEvent } from "./cal-event";
-import Backdrop from "../../../modal/backdrop";
-import Modal from "../../../modal/modal";
 
 interface AddToCalendarButtonProps {
   calendarEvent: CalendarEvent;
@@ -16,14 +14,11 @@ export default function AddToCalendarButton({
   return (
     <React.Fragment>
       <div className="add-to-calendar-wrapper">
-        <button className="add-to-calendar-button" onClick={handleClick}>
+        <button className="add-to-calendar-button text-sm font-bold" onClick={handleClick}>
           Add to Calendar
         </button>
-        {isTooltipVisible && (<>
-          <Backdrop />
-          <Modal />
+        {isTooltipVisible && (
           <AddToCalendarButtonTooltip calendarEvent={calendarEvent} />
-          </>
         )}
       </div>
     </React.Fragment>

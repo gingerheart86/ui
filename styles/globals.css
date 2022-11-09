@@ -90,3 +90,64 @@ html {
 .control-dots div:not(:first-child) {
   padding-left:10px;
 }
+
+.add-to-calendar-button {
+  border: none;
+  background: none;
+  color: #0A22F5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.add-to-calendar-wrapper {
+  position: relative;
+  position: relative;
+  display: inline;
+
+}
+
+.event-card {
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.add-to-calendar-button-tooltip {
+  position: absolute;
+  top: -162px;
+  left: 45px;
+  width:212px;
+  height:162px;
+  background: #F5F5F5;
+  display: block;
+  z-index: 1;
+}
+
+.calendar-provider-link {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-gap: 12px;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+  background: none;
+  border:none;
+  font-size: 14px;
+  text-decoration: none;
+
+  color: #666;
+}
+
+.icon__placeholder {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url("../public/images/global.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

@@ -19,7 +19,7 @@ export default function Home(props) {
     <>
       <HeroSection />
       <CarouselTest />
-      <AllEventsSection events={events} />
+      <AllEventsSection/>
       <ResourcesSectionOne />
       <ResourcesSectionTwo />
       <VideoSection />

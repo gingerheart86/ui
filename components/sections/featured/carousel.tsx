@@ -38,7 +38,11 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
               <div
                 className="space-x-4 text flex items-center h-10 cursor-pointer text-[#464646ae] max-w-[15rem] leading-5	text-left"
                 onClick={clickHandler}
-              ><div className="h-6 w-6 hover:scale-110 duration-100"><img src="/images/global.svg"></img></div></div>
+              >
+                <div className="h-6 w-6 hover:scale-110 duration-100">
+                  <img src="/images/global.svg"></img>
+                </div>
+              </div>
             </div>
           );
         }
@@ -71,7 +75,11 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
                 </div>
                 <div className="pt-2 pb-2 text-left text-descigreyfont absolute w-[45vw] top-[34%]">
                   <p className="text-l ">
-                    {event.description.substring(0, 600) + "..."}
+                    {event.description.length > 600 ? (
+                      <>{event.description.substring(0, 600) + "..."}</>
+                    ) : (
+                      <>{event.description}</>
+                    )}
                   </p>
                 </div>
                 <div>

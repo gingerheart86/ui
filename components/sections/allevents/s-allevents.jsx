@@ -1,7 +1,24 @@
 import { atcb_action, atcb_init } from "add-to-calendar-button";
 
-function AllEventsSection(props) {
-  const { events } = props;
+import { getAllEvents } from "../../../dummy-data";
+import AddToCalendarButton from "./AddToCalendarButton/AddToCalendarButton";
+
+
+
+
+
+function AllEventsSection() {
+  const events = getAllEvents();
+  console.log(events);
+
+  const SAMPLE_CALENDAR_EVENT = {
+    title: "Cem's birthday",
+    description: "Please come to my BD",
+    startDate: new Date("2020-08-26 17:00"),
+    durationInMinutes: 120,
+    address: "My Home"
+  };
+
 
   return (
     <section id="events">
@@ -27,10 +44,17 @@ function AllEventsSection(props) {
       </div>
       <div className="pt-4 pb-4">
         <ul>
+        
           {events.map((event) => (
             <li key={event.id}>
               <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                <p className="col-span-3">{event.title}</p>
+                <div className="col-span-2">
+                  <a className="hover:underline " href={event.website}>
+                    {event.title}
+                  </a>
+                </div>
+                <div> <AddToCalendarButton calendarEvent={SAMPLE_CALENDAR_EVENT} /></div>
+
                 <div className="flex items-center">
                   <img
                     className="h-5 w-5 mr-2 rounded-full"
@@ -55,13 +79,17 @@ function AllEventsSection(props) {
       </div>
       <div className="pt-4 pb-4">
         <ul>
-          <div className="pt-4 pb-4">
+          <div className="pt-4 pb-4 text-descigreyfont">
             <ul>
               {events.map((event) => (
                 <li key={event.id}>
                   <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                    <p className="col-span-3">{event.title}</p>
-                    <div className="flex items-center">
+                    <div className="col-span-3">
+                      <a className="hover:underline " href={event.website}>
+                        {event.title}
+                      </a>
+                    </div>
+                    <div className="flex items-center grayscale">
                       <img
                         className="h-5 w-5 mr-2 rounded-full"
                         src={`/images/flags/${event.country.toLowerCase()}.svg`}

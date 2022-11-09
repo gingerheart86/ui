@@ -75,3 +75,18 @@ html {
     display: none;
   }
 }
+
+.control-dots {
+  display: flex;
+  position: relative;
+  top: 25%;
+  height: fit-content;
+  width: calc(50vw - 1rem) !important;
+  margin-left: 1rem !important;
+}
+
+
+
+.control-dots div:not(:first-child) {
+  padding-left:10px;
+}

@@ -1,31 +1,22 @@
 const DUMMY_EVENTS = [
     {
       id: 'e1',
+      title: 'Collaborative Research & STEPS workshops',
+      website: 'https://www.desciboston.com/',
+      description:
+        'EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
+      location: 'Somestreet 25, 12345 San Somewhereo ',
+      date: '2021-05-12',
+      image: 'images/coding-event.png',
+      country: 'DE',
+      isFeatured: true,
+    },
+    {
+      id: 'e1',
       title: 'DeSci Boston',
+      website: 'https://www.desciboston.com/',
       description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'DE',
-      isFeatured: true,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Berlin',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'DE',
-      isFeatured: true,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Bogota',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
+        'EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
       location: 'Somestreet 25, 12345 San Somewhereo',
       date: '2021-05-12',
       image: 'images/coding-event.png',
@@ -35,79 +26,25 @@ const DUMMY_EVENTS = [
     {
       id: 'e1',
       title: 'DeSci Boston',
+      website: 'https://www.desciboston.com/',
       description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
+        'EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
       location: 'Somestreet 25, 12345 San Somewhereo',
       date: '2021-05-12',
       image: 'images/coding-event.png',
       country: 'DE',
-      isFeatured: false,
-    },
-    {
+      isFeatured: true,
+    },    {
       id: 'e1',
       title: 'DeSci Boston',
+      website: 'https://www.desciboston.com/',
       description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
+        'EVENT1: veryone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
       location: 'Somestreet 25, 12345 San Somewhereo',
       date: '2021-05-12',
       image: 'images/coding-event.png',
       country: 'DE',
-      isFeatured: false,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Boston',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'CZ',
-      isFeatured: false,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Boston',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'ES',
-      isFeatured: false,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Boston',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'IT',
-      isFeatured: false,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Boston',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'DE',
-      isFeatured: false,
-    },
-    {
-      id: 'e1',
-      title: 'DeSci Boston',
-      description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.png',
-      country: 'CH',
-      isFeatured: false,
+      isFeatured: true,
     },
   ];
   

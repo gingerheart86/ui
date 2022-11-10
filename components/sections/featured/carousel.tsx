@@ -17,6 +17,7 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
       stopOnHover: true,
       emulateTouch: false,
       transitionTime: 500,
+      showThumbs: false,
       showArrows: false,
       selectedItem: 0,
       renderIndicator: (clickHandler, isSelected: boolean, index: number) => {

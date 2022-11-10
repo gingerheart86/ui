@@ -14,7 +14,7 @@ export default function AddToCalendarButton({
   return (
     <React.Fragment>
       <div className="add-to-calendar-wrapper">
-        <button className="add-to-calendar-button text-sm font-bold" onClick={handleClick}>
+        <button className="add-to-calendar-button text-sm" onClick={handleClick}>
           Add to Calendar
         </button>
         {isTooltipVisible && (
@@ -29,3 +29,4 @@ export default function AddToCalendarButton({
     setIsTooltipVisible(!isTooltipVisible);
   }
 }
+

@@ -3,13 +3,8 @@ import { atcb_action, atcb_init } from "add-to-calendar-button";
 import { getAllEvents } from "../../../dummy-data";
 import AddToCalendarButton from "./AddToCalendarButton/AddToCalendarButton";
 
-
-
-
-
 function AllEventsSection() {
   const events = getAllEvents();
-  console.log(events);
 
   const SAMPLE_CALENDAR_EVENT = {
     title: "Cem's birthday",
@@ -54,6 +49,7 @@ function AllEventsSection() {
                   </a>
                 </div>
                 <div> <AddToCalendarButton calendarEvent={SAMPLE_CALENDAR_EVENT} /></div>
+                {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
                 <div className="flex items-center">
                   <img

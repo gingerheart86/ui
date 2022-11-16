@@ -1,4 +1,5 @@
-import { getAllEvents } from "../dummy-data";
+import { getAllEvents } from "../services/sort-event-data";
+import { getAllEventsDummy } from "../dummy-data";
 
 import HeroSection from "../components/sections/hero/s-hero";
 import FeaturedSection from "../components/sections/featured/s-featured";
@@ -10,16 +11,18 @@ import ContributeSection from "../components/sections/ contribute/s-contribute";
 import ContributorsSection from "../components/sections/ contribute/s-contributors";
 import PartnerLogoSection from "../components/sections/partners/s-partners";
 import Footer from "../components/sections/footer/footer";
-import CarouselTest from "../components/sections/featured/carousel";
+import Carousel from "../components/sections/featured/carousel";
 
 
 export default function Home(props) {
-  const { events } = props;
+  const { upcomingEventsAsc, pastEventsDesc, featuredEvents } = props;
+  const {events} = getAllEventsDummy();
+
   return (
     <>
       <HeroSection />
-      <CarouselTest />
-      <AllEventsSection/>
+      <Carousel featuredEvents={featuredEvents}/>
+      <AllEventsSection upComingEvents={upcomingEventsAsc} pastEvents={pastEventsDesc}/>
       <ResourcesSectionOne />
       <ResourcesSectionTwo />
       <VideoSection />
@@ -30,11 +33,42 @@ export default function Home(props) {
     </>
   );
 }
-export async function getStaticProps() {
-  const events = getAllEvents();
+// export async function getStaticProps() {
+//   const events = getAllEvents();
+//   return {
+//     props: {
+//       events: events,
+//     },
+//   };
+// }
+
+export async function getStaticProps(context) {
+  const { upcomingEventsAsc, pastEventsDesc, featuredEvents } = await getAllEvents();
+  
+
+  upcomingEventsAsc.forEach((event) => {
+    event.date = event.date.toISOString().substring(0, 10);
+  });
+
+  pastEventsDesc.forEach((event) => {
+    event.date = event.date.toISOString().substring(0, 10);
+  });
+
+  if (!pastEventsDesc) {
+    return {
+      redirect: {
+        destination: "/no-data",
+      },
+    };
+  }
+
+
   return {
     props: {
-      events: events,
+      upcomingEventsAsc,
+      pastEventsDesc,
+      featuredEvents
     },
+    revalidate: 10,
   };
 }

@@ -1,19 +1,7 @@
-import { atcb_action, atcb_init } from "add-to-calendar-button";
-
-import { getAllEvents } from "../../../dummy-data";
 import AddToCalendarButton from "./AddToCalendarButton/AddToCalendarButton";
 
-function AllEventsSection() {
-  const events = getAllEvents();
-
-  const SAMPLE_CALENDAR_EVENT = {
-    title: "Cem's birthday",
-    description: "Please come to my BD",
-    startDate: new Date("2020-08-26 17:00"),
-    durationInMinutes: 120,
-    address: "My Home"
-  };
-
+function AllEventsSection(props) {
+  const { upComingEvents, pastEvents } = props;
 
   return (
     <section id="events">
@@ -39,32 +27,51 @@ function AllEventsSection() {
       </div>
       <div className="pt-4 pb-4">
         <ul>
-        
-          {events.map((event) => (
-            <li key={event.id}>
-              <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                <div className="col-span-2">
-                  <a className="hover:underline " href={event.website}>
-                    {event.title}
-                  </a>
-                </div>
-                <div> <AddToCalendarButton calendarEvent={SAMPLE_CALENDAR_EVENT} /></div>
-                {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
+          {upComingEvents.map((event) => {
 
-                <div className="flex items-center">
-                  <img
-                    className="h-5 w-5 mr-2 rounded-full"
-                    src={`/images/flags/${event.country.toLowerCase()}.svg`}
-                    alt=""
-                    variant="flag"
-                  ></img>
-                  <p>Zurüch</p>
+            const CALENDAR_EVENT = {
+              title: event.title,
+              description: event.description,
+              startDate: new Date(event.date),
+              durationInMinutes: 120,
+              address: event.full_address,
+            };
+
+            return (
+              <li key={event.id}>
+                <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
+                  <div className="col-span-2">
+                    <a
+                      className="hover:underline "
+                      target={"_blank"}
+                      href={event.link}
+                    >
+                      {event.title}
+                    </a>
+                  </div>
+                  <div>
+                    {" "}
+                    <AddToCalendarButton
+                      calendarEvent={CALENDAR_EVENT}
+                    />
+                  </div>
+                  {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
+
+                  <div className="flex items-center">
+                    <img
+                      className="h-5 w-5 mr-2 rounded-full"
+                      src={`/images/flags/${event.country.toLowerCase()}.svg`}
+                      alt=""
+                      variant="flag"
+                    ></img>
+                    <p>{event.city}</p>
+                  </div>
+                  <p>{event.meetup_type}</p>
+                  <p>16. November 2022</p>
                 </div>
-                <p>Meetup</p>
-                <p>16. November 2022</p>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="bg-descigrey w-full mt-5 pr-4 pl-4 h-10 grid grid-cols-6 items-center text-lg">
@@ -77,11 +84,11 @@ function AllEventsSection() {
         <ul>
           <div className="pt-4 pb-4 text-descigreyfont">
             <ul>
-              {events.map((event) => (
+              {pastEvents.map((event) => (
                 <li key={event.id}>
                   <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
                     <div className="col-span-3">
-                      <a className="hover:underline " href={event.website}>
+                      <a className="hover:underline " target={"_blank"} href={event.link}>
                         {event.title}
                       </a>
                     </div>
@@ -92,7 +99,7 @@ function AllEventsSection() {
                         alt=""
                         variant="flag"
                       ></img>
-                      <p>Zurüch</p>
+                      <p>{event.city}</p>
                     </div>
                     <p>Meetup</p>
                     <p>16. Mai 2022</p>
@@ -105,13 +112,13 @@ function AllEventsSection() {
       </div>
       <div className="p-4">
         <form className="" action="/send-data-here" method="post">
-          <label className="mb-5 text-[#B1B1B1]" for="email">
+          <label className="mb-5 text-[#B1B1B1]" htmlFor="email">
             SIGNUP FOR FUTURE EVENTS
           </label>
           <div className="flex justify-between border-solid border-b border-black mr-[3%]">
             <input
               type="email"
-              className="w-[80%] h-10 placeholder:text-black placeholder:text-2xl focus:outline-none"
+              className="w-[80%] h-10 placeholder:text-black placeholder:text-2xl focus:outline-none focus:placeholder:opacity-0"
               placeholder="your@email.com"
               id="first"
               name="first"
@@ -124,7 +131,7 @@ function AllEventsSection() {
       </div>
       <div className="p-4">
         <form className="" action="/send-data-here" method="post">
-          <label className="mb-5 text-[#B1B1B1]" for="email">
+          <label className="mb-5 text-[#B1B1B1]" htmlFor="email">
             SUBSCRIBE TO CALENDAR
           </label>
           <div className="flex justify-between border-solid border-b border-black mr-[3%]">
@@ -135,9 +142,14 @@ function AllEventsSection() {
               id="first"
               name="first"
             />
-            <button type="submit" className="text-2xl">
+            <a
+              href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com"
+              target="_blank"
+              type="submit"
+              className="text-2xl bg-white"
+            >
               Add
-            </button>
+            </a>
           </div>
         </form>
       </div>

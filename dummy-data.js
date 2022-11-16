@@ -12,7 +12,7 @@ const DUMMY_EVENTS = [
       isFeatured: true,
     },
     {
-      id: 'e1',
+      id: 'e2',
       title: 'DeSci Boston',
       website: 'https://www.desciboston.com/',
       description:
@@ -24,7 +24,7 @@ const DUMMY_EVENTS = [
       isFeatured: true,
     },
     {
-      id: 'e1',
+      id: 'e3',
       title: 'DeSci Boston',
       website: 'https://www.desciboston.com/',
       description:
@@ -35,7 +35,7 @@ const DUMMY_EVENTS = [
       country: 'DE',
       isFeatured: true,
     },    {
-      id: 'e1',
+      id: 'e4',
       title: 'DeSci Boston',
       website: 'https://www.desciboston.com/',
       description:
@@ -52,7 +52,7 @@ const DUMMY_EVENTS = [
     return DUMMY_EVENTS.filter((event) => event.isFeatured);
   }
   
-  export function getAllEvents() {
+  export function getAllEventsDummy() {
     return DUMMY_EVENTS;
   }
   

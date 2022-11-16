@@ -68,7 +68,7 @@ function generateGoogleCalendarUrl(calendarEvent: CalendarEvent) {
     `&dates=${  startDate || ''}`,
     `/${  endDate || ''}`,
     // TODO: append video appointment link to description
-    `&details=${  `${calendarEvent.description}\n`+`https://cemkiray.com` || ''}`,
+    `&details=${  `${calendarEvent.description}\n` || ''}`,
     `&location=${  calendarEvent.address || ''}`,
     '&sprop=&sprop=name:'].join(''));
 

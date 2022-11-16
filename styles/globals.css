@@ -126,7 +126,7 @@ html {
   height:162px;
   background: #F5F5F5;
   display: block;
-  z-index: 1;
+  z-index: 100;
 }
 
 .calendar-provider-link {
@@ -156,3 +156,4 @@ html {
   background-position: center;
   background-size: cover;
 }
+

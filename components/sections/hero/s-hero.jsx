@@ -4,7 +4,6 @@ import Navigation from "./navigation";
 import Backdrop from "../../modal/backdrop";
 import ModalSubmitMail from "../../modal/modal-submit-mail";
 import {useState} from "react";
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 
 function HeroSection() {
@@ -56,11 +55,12 @@ function HeroSection() {
                     </div>
                   </div>
                 </li>
-                <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer" onClick={openModalHandler}>
+                <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer">
                   <div className="w-full text-xl border-solid border-white p-2 border-b ">
                     <a href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com" target="_blank">Subscribe to event calendar</a>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
+                    <div></div>
                     <div className="group-hover/edit:rotate-45 duration-200">
                       {" "}
                       <ArrowDownRight color="black" />

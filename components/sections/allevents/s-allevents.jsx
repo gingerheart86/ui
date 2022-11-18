@@ -30,9 +30,9 @@ function AllEventsSection(props) {
           {upComingEvents.map((event) => {
 
             const CALENDAR_EVENT = {
-              title: event.title,
-              description: event.description,
-              startDate: new Date(event.date),
+              title: event.event_title,
+              description: event.event_description,
+              startDate: new Date(event.event_date),
               durationInMinutes: 120,
               address: event.full_address,
             };
@@ -44,9 +44,9 @@ function AllEventsSection(props) {
                     <a
                       className="hover:underline "
                       target={"_blank"}
-                      href={event.link}
+                      href={event.event_link}
                     >
-                      {event.title}
+                      {event.event_title}
                     </a>
                   </div>
                   <div>
@@ -60,11 +60,11 @@ function AllEventsSection(props) {
                   <div className="flex items-center">
                     <img
                       className="h-5 w-5 mr-2 rounded-full"
-                      src={`/images/flags/${event.country.toLowerCase()}.svg`}
+                      src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
                       alt=""
                       variant="flag"
                     ></img>
-                    <p>{event.city}</p>
+                    <p>{event.event_city}</p>
                   </div>
                   <p>{event.meetup_type}</p>
                   <p>16. November 2022</p>
@@ -88,18 +88,18 @@ function AllEventsSection(props) {
                 <li key={event.id}>
                   <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
                     <div className="col-span-3">
-                      <a className="hover:underline " target={"_blank"} href={event.link}>
-                        {event.title}
+                      <a className="hover:underline " target={"_blank"} href={event.event_link}>
+                        {event.event_title}
                       </a>
                     </div>
                     <div className="flex items-center grayscale">
                       <img
                         className="h-5 w-5 mr-2 rounded-full"
-                        src={`/images/flags/${event.country.toLowerCase()}.svg`}
+                        src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
                         alt=""
                         variant="flag"
                       ></img>
-                      <p>{event.city}</p>
+                      <p>{event.event_city}</p>
                     </div>
                     <p>Meetup</p>
                     <p>16. Mai 2022</p>

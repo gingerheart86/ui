@@ -3,11 +3,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import RoundArrowLeft from "../../icons/RoundArrowLeft";
 import RoundArrowRight from "../../icons/RoundArrowRight";
-import { getFeaturedEvents } from "../../../dummy-data";
+// import { getFeaturedEvents } from "../../../dummy-data";
 
-export default class withCustomStatusArrowsAndIndicators extends Component {
+export default class withCustomStatusArrowsAndIndicators extends Component <any, any>{
   render() {
-    const featuredEvents = getFeaturedEvents();
+    const {featuredEvents} = this.props;
+    
 
     const carouselProp = {
       showStatus: true,
@@ -28,7 +29,7 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
                 className="space-x-4 text-2xl h-10 flex items-center cursor-pointer text-[#0A22F5] leading-6	text-left"
                 onClick={clickHandler}
               >
-                <p className="break-words">{featuredEvents[index].title}</p>
+                <p className="break-words">{featuredEvents[index].event_title}</p>
               </div>
             </div>
           );
@@ -76,16 +77,16 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
                 </div>
                 <div className="pt-2 pb-2 text-left text-descigreyfont absolute w-[45vw] top-[34%]">
                   <p className="text-l ">
-                    {event.description.length > 600 ? (
-                      <>{event.description.substring(0, 600) + "..."}</>
+                    {event.event_description.length > 600 ? (
+                      <>{event.event_description.substring(0, 600) + "..."}</>
                     ) : (
-                      <>{event.description}</>
+                      <>{event.event_description}</>
                     )}
                   </p>
                 </div>
                 <div>
                   <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6 hover:bg-descigreyfont hover:text-white cursor-pointer ">
-                    <a href={event.website} target={"_blank"}>
+                    <a href={event.event_link} target={"_blank"}>
                       Event Website
                     </a>
                   </div>
@@ -94,13 +95,13 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
                       <li>
                         <div className="h-10 border-solid border-t border-black flex items-center justify-between">
                           <p>Location</p>
-                          <p>{event.location}</p>
+                          <p>{event.full_address}</p>
                         </div>
                       </li>
                       <li>
                         <div className="h-10 border-solid border-t border-black flex items-center justify-between">
                           <p>Date</p>
-                          <div>{event.date}</div>
+                          <div>{event.event_date}</div>
                         </div>
                       </li>
                       <li>
@@ -117,11 +118,11 @@ export default class withCustomStatusArrowsAndIndicators extends Component {
                 <div className="w-[33%] ">
                   <div className="ml-4 mt-2 h-16 flex items-center">
                     <a
-                      href={event.website}
+                      href={event.event_link}
                       target={"_blank"}
                       className="text-xl text-white border-solid border-b-2 cursor-pointer"
                     >
-                      {event.title}
+                      {event.event_title}
                     </a>
                   </div>
                 </div>

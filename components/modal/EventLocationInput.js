@@ -6,14 +6,16 @@ import PlacesAutocomplete, {
   getLatLng,
 } from 'react-places-autocomplete';
 
-// const [address, setAddress] = useState("");
-// const [suggestion, setSuggestion] = useState("");
+
+
  
 export default class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: '', location: {lat: 0, lng: 0}};
+    this.state = { address: '', suggestion: ''};
+
   }
+
 
 
 
@@ -22,15 +24,13 @@ export default class LocationSearchInput extends React.Component {
   handleChange = address => {
     this.setState({ address });
   };
- 
-  handleSelect = address => {
-    setAddress(address)
-    geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(alert(this.state.location.lat))
-      .then(latLng => alert(latLng.lat))
-      .catch(error => console.error('Error', error));
-  };
+
+  handleSelect = (address, suggestion) => {
+   this.setState({ address })
+   this.props.setAddress({address})
+  }
+
+
 
 
   render() {
@@ -39,7 +39,7 @@ export default class LocationSearchInput extends React.Component {
         value={this.state.address}
         onChange={this.handleChange}
         // passing in the state to function from parent component and updating state there
-        onSelect={this.props.setAddress(this.state.address)}
+        onSelect={this.handleSelect}
         
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
@@ -54,7 +54,7 @@ export default class LocationSearchInput extends React.Component {
             <div className="autocomplete-dropdown-container">
               {loading && <div>Loading...</div>}
               {suggestions.map(suggestion => {
-                console.log(suggestion);
+
                 const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item';

@@ -3,26 +3,55 @@ import CountrySelector from "./CountrySelect";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import TimeZone from "./TimeZoneSelect";
 import LocationSearchInput from "./EventLocationInput";
 
-function ModalSubmitEvent(props) {
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from "react-places-autocomplete";
+
+function ModalSubmitEvent() {
   const schema = yup
     .object({
-      name: yup.string().required().max(80),
-      email: yup.string().required().email(),
-      eventName: yup.string().required().max(80),
-      eventWebsite: yup.string().required().max(80),
-      eventDate: yup.date().required(),
-      startTime: yup.string().required().max(80),
-      endTime: yup.string().required().max(80),
+      event_title: yup.string().required().max(80),
+      contact_email: yup.string().required().email(),
+      event_title: yup.string().required().max(80),
+      event_link: yup.string().required(),
+      event_date: yup.date().required(),
+      event_start_time: yup.string().required().max(80),
+      event_end_time: yup.string().required().max(80),
     })
     .required();
 
+
   const [country, setCountry] = useState("");
-  // const [timeZone, setTimeZone] = useState("");
+  const [latLng, setlatLng] = useState("");
+  const [timeZone, setTimeZone] = useState("");
   const [address, setAddress] = useState("");
 
+  const getAddress = (a) => {
+    setAddress(a.address);
+    console.log(a.address);
+  };
+
+  useEffect(() => {
+    geocodeByAddress(address)
+      .then((results) => getLatLng(results[0]))
+      .then((latLng) => setlatLng(latLng));
+  }, [address]);
+
+  useEffect(() => {
+    fetch(
+      `https://maps.googleapis.com/maps/api/timezone/json?location=${latLng.lat}%2C${latLng.lng}&timestamp=1331161200&key=AIzaSyB4IefstneiNw1cA3bTrhIXFti9IYfVP8A`
+    )
+      .then((response) => response.json())
+      .then((r) => setTimeZone(r.timeZoneId))
+      .catch((error) => console.error("Error", error));
+  }, [latLng]);
+
+  useEffect(() => {
+    console.log("Here is the Timezone", timeZone);
+  }, [timeZone]);
 
   const {
     register,
@@ -30,37 +59,21 @@ function ModalSubmitEvent(props) {
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(schema) });
 
-
   const onSubmit = async (data) => {
-    data.country = country;
-    data.address = address;
-    
-    const date = new Date(data.eventDate);
-    data.eventDate = date.toISOString();
-    // data.timeZone = timeZone;
-    alert(data.address)
-    return
-    console.log("Submitting Form")
-   
-    const response = await fetch("/api/postEvent", {
+    console.log(data)
+    data.event_address = address;
+    data.event_timezone = timeZone;
+    const date = new Date(data.event_date);
+    data.event_date = date.toISOString();
+    alert(data.event_date);
+
+   fetch("/api/postEvent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then(alert(JSON.stringify(address)));
-   console.log("Succesfully submitted", response);
-  };
-
-// useEffect to post data? 
-
-  const getCountry = (data) => {
-    setCountry(data.value);
-  };
-
-
-  const getAddress = (data) => {
-    setAddress(data);
+    }).then((response) => console.log("Response :", response));
   };
 
   return (
@@ -89,9 +102,9 @@ function ModalSubmitEvent(props) {
                 type="text"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
                 placeholder="Event Name"
-                id="eventName"
-                name="eventName"
-                {...register("eventName")}
+                id="event_title"
+                name="event_title"
+                {...register("event_title")}
               />
               {errors.eventName?.message}
             </div>
@@ -100,9 +113,9 @@ function ModalSubmitEvent(props) {
                 type="text"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0 "
                 placeholder="Your full name"
-                id="name"
-                name="name"
-                {...register("name")}
+                id="contact_name"
+                name="contact_name"
+                {...register("contact_name")}
               />
               {errors.name && "Name is required."}
             </div>
@@ -111,9 +124,9 @@ function ModalSubmitEvent(props) {
                 type="email"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
                 placeholder="your@email.com"
-                id="email"
-                name="email"
-                {...register("email")}
+                id="contact_email"
+                name="contact_email"
+                {...register("contact_email")}
               />
               {errors.email?.message}
             </div>
@@ -122,31 +135,30 @@ function ModalSubmitEvent(props) {
                 type="url"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
                 placeholder="Event Website / Meetup Link"
-                id="eventWebsite"
-                name="eventWebsite"
-                {...register("eventWebsite")}
+                id="event_link"
+                name="event_link"
+                {...register("event_link")}
               />
               {errors.eventWebsite?.message}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
-                type="date"
+                type="datetime-local"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
-                placeholder="Event Website / Meetup Link"
-                id="eventDate"
-                name="eventDate"
-                {...register("eventDate")}
+                id="event_date"
+                name="event_date"
+                {...register("event_date")}
               />
-              {errors.eventDate?.message}
+              {errors.event_date?.message}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
                 type="time"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
                 placeholder="Approx. Start Time"
-                id="startTime"
-                name="startTime"
-                {...register("startTime")}
+                id="event_start_time"
+                name="event_start_time"
+                {...register("event_start_time")}
                 value="10:00"
               />
             </div>
@@ -155,20 +167,20 @@ function ModalSubmitEvent(props) {
                 type="time"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
                 placeholder="Approx. End Time"
-                id="endTime"
-                name="endTime"
-                {...register("endTime")}
+                id="event_end_time"
+                name="event_end_time"
+                {...register("event_end_time")}
                 value="12:00"
               />
             </div>
-            <div className="flex justify-between border-solid border-b border-black mr-[3%]">
+            {/* <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <CountrySelector onChange={getCountry} />
-            </div>
+            </div> */}
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               {/* <TimeZone onChange={getData} /> */}
             </div>
-            <LocationSearchInput setAddress={getAddress}/>            
-            <button type="submit" className="text-l mt-5">
+            <LocationSearchInput setAddress={getAddress} />
+            <button type="submit"  className="text-l mt-5">
               {isSubmitting ? "Submittin" : "Submit"}
             </button>
           </form>

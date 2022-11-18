@@ -19,6 +19,7 @@
     "places-autocomplete-react": "^1.0.10",
     "react": "^18.2.0",
     "react-add-to-calendar": "^0.1.5",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-google-autocomplete": "^2.7.0",
     "react-hook-form": "^7.39.3",

@@ -31,23 +31,26 @@ export async function getAirtableEvents() {
 
 
 
-export async function airtablePostEvent(eventData) {
-    const {name, email, eventName, eventDate, eventWebsite, startTime, endTime, country} = eventData;
-
+export async function airtablePostEvent(data) {
+    const {event_title, contact_email, contact_name, event_description, event_date, event_link, event_image, event_city, event_address, event_timezone, event_start_time, event_end_time } = data;
     // if (!title || !date || !link || !image) {
     //     console.log("missing argument for airtable postEvent")
     //     return;
     // }
 
-    await base('eventsV2').create({
-        "fldkM9PGqYhK7f9YG": name,
-        "fldHYJQFIlLBE7c4s": email,
-        "fld7b4UKGzyRzSmDX": eventName,
-        "fldbno5UhtKOX9dxg": eventDate,
-        "fldxlf9Fm4Q2NeVYA": eventWebsite,
-        "fldRuyjTJp3ed99av": startTime,
-        "fldQOBGQVwLKjkMNH": endTime,
-        "fldwVxc8ok8CGRqwW": country
+    await base('eventsTemp').create({
+        "fldzGTmBuSndlvtNq": event_title,
+        "fldHz7TnLS88YS7p8": contact_email,
+        "fldQQJA0ULKiuQdh7": contact_name,
+        "fldmZpy8x02CguMEv": event_description,
+        "fldC21IetponC0qNo": event_date,
+        "fldAOGsyKMuE3HVBA": event_link,
+        "fldbahaLhP0gBnuCR": event_image,
+        "fldQE6Lw2AkbLCjID": event_city,
+        "fldZJ8hJMxXEecZRK": event_address,
+        "fldRogSQE6qzDmUyt": event_timezone,
+        "fldMgz5SFxM00qXNc": event_start_time,
+        "fldVXGcr0x25es0jp": event_end_time
       }, function(err, record) {
         if (err) {
           console.error(err);

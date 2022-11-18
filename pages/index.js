@@ -33,25 +33,16 @@ export default function Home(props) {
     </>
   );
 }
-// export async function getStaticProps() {
-//   const events = getAllEvents();
-//   return {
-//     props: {
-//       events: events,
-//     },
-//   };
-// }
 
 export async function getStaticProps(context) {
   const { upcomingEventsAsc, pastEventsDesc, featuredEvents } = await getAllEvents();
-  
 
   upcomingEventsAsc.forEach((event) => {
-    event.date = event.date.toISOString().substring(0, 10);
+    event.event_date = event.event_date.toISOString().substring(0, 10);
   });
 
   pastEventsDesc.forEach((event) => {
-    event.date = event.date.toISOString().substring(0, 10);
+    event.event_date = event.event_date.toISOString().substring(0, 10);
   });
 
   if (!pastEventsDesc) {
@@ -61,7 +52,6 @@ export async function getStaticProps(context) {
       },
     };
   }
-
 
   return {
     props: {

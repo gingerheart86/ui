@@ -9,7 +9,8 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'pbs.twimg.com',
-      's3.amazonaws.com'
+      's3.amazonaws.com',
+      'img.youtube.com'
     ],
   }
 }

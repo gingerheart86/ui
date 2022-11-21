@@ -32,7 +32,7 @@ export async function getAirtableEvents() {
 
 
 export async function airtablePostEvent(data) {
-    const {event_title, contact_email, contact_name, event_description, event_date, event_link, event_image, event_city, event_address, event_timezone, event_start_time, event_end_time } = data;
+    const {event_title, contact_email, contact_name, event_description, event_date, event_link, event_image, event_city, event_address, event_timezone, event_start_time, event_end_time, event_end_date } = data;
     // if (!title || !date || !link || !image) {
     //     console.log("missing argument for airtable postEvent")
     //     return;
@@ -43,7 +43,8 @@ export async function airtablePostEvent(data) {
         "fldHz7TnLS88YS7p8": contact_email,
         "fldQQJA0ULKiuQdh7": contact_name,
         "fldmZpy8x02CguMEv": event_description,
-        "fldC21IetponC0qNo": event_date,
+        "fldzmLf8r3lMtte2R": event_date,
+        "fld76R6zBWyMGzAVY": event_end_date,
         "fldAOGsyKMuE3HVBA": event_link,
         "fldbahaLhP0gBnuCR": event_image,
         "fldQE6Lw2AkbLCjID": event_city,

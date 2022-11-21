@@ -15,11 +15,12 @@ function ModalSubmitEvent() {
     .object({
       event_title: yup.string().required().max(80),
       contact_email: yup.string().required().email(),
+      contact_name: yup.string().required().max(80),
       event_title: yup.string().required().max(80),
       event_link: yup.string().required(),
+      event_description: yup.string().required(),
       event_date: yup.date().required(),
-      event_start_time: yup.string().required().max(80),
-      event_end_time: yup.string().required().max(80),
+      event_end_date: yup.date().required(),
     })
     .required();
 
@@ -106,7 +107,7 @@ function ModalSubmitEvent() {
                 name="event_title"
                 {...register("event_title")}
               />
-              {errors.eventName?.message}
+              {errors.event_title?.message}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
@@ -117,7 +118,7 @@ function ModalSubmitEvent() {
                 name="contact_name"
                 {...register("contact_name")}
               />
-              {errors.name && "Name is required."}
+              {errors.contact_name && "Name is required."}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
@@ -128,7 +129,7 @@ function ModalSubmitEvent() {
                 name="contact_email"
                 {...register("contact_email")}
               />
-              {errors.email?.message}
+              {errors.contact_email?.message}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
@@ -139,7 +140,18 @@ function ModalSubmitEvent() {
                 name="event_link"
                 {...register("event_link")}
               />
-              {errors.eventWebsite?.message}
+              {errors.event_link?.message}
+            </div>
+            <div className="flex justify-between border-solid border-b border-black mr-[3%]">
+              <input
+                type="textarea"
+                className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
+                placeholder="Short Event Description"
+                id="event_description"
+                name="event_description"
+                {...register("event_description")}
+              />
+              {errors.event_description?.message}
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
@@ -153,25 +165,13 @@ function ModalSubmitEvent() {
             </div>
             <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <input
-                type="time"
+                type="datetime-local"
                 className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
-                placeholder="Approx. Start Time"
-                id="event_start_time"
-                name="event_start_time"
-                {...register("event_start_time")}
-                value="10:00"
+                id="event_end_date"
+                name="event_end_date"
+                {...register("event_end_date")}
               />
-            </div>
-            <div className="flex justify-between border-solid border-b border-black mr-[3%]">
-              <input
-                type="time"
-                className="w-[80%] h-10 placeholder:text-black placeholder:text-l focus:outline-none focus:placeholder:opacity-0"
-                placeholder="Approx. End Time"
-                id="event_end_time"
-                name="event_end_time"
-                {...register("event_end_time")}
-                value="12:00"
-              />
+              {errors.event_end_date?.message}
             </div>
             {/* <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <CountrySelector onChange={getCountry} />
@@ -185,7 +185,7 @@ function ModalSubmitEvent() {
             </button>
           </form>
         </div>
-      </div>
+      </div>  
     </div>
   );
 }

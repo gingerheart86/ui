@@ -9,13 +9,10 @@ function AllEventsSection(props) {
         <div className="w-2/4 h-[70%] flex flex-col justify-between">
           <h2 className="text-4xl py-10">All Events</h2>
           <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            aliquam orci nec elit congue sodales a quis erat. Quisque eget est
-            quis orci ornare interdum. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Done aliquam orci nec elit congue sodales a quis
-            erat. Quisque eget est quis orci ornare interdum. Done aliquam orci
-            nec elit congue sodales a quis erat. Quisque eget est quis orci
-            ornare interdum.
+            DeSci global is the global hub for all DeSci events; a schelling
+            point to collect, share, and uplift all DeSci events across the
+            globe. Explore the events that have happened and get involved with
+            new ones coming up.
           </p>
         </div>
       </div>
@@ -28,11 +25,11 @@ function AllEventsSection(props) {
       <div className="pt-4 pb-4">
         <ul>
           {upComingEvents.map((event) => {
-
             const CALENDAR_EVENT = {
               title: event.event_title,
               description: event.event_description,
-              startDate: new Date(event.event_date),
+              startDate: new Date(event.event_gmt_date),
+              endDate: new Date(event.event_gmt_end_date),
               durationInMinutes: 120,
               address: event.full_address,
             };
@@ -51,9 +48,7 @@ function AllEventsSection(props) {
                   </div>
                   <div>
                     {" "}
-                    <AddToCalendarButton
-                      calendarEvent={CALENDAR_EVENT}
-                    />
+                    <AddToCalendarButton calendarEvent={CALENDAR_EVENT} />
                   </div>
                   {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
@@ -88,7 +83,11 @@ function AllEventsSection(props) {
                 <li key={event.id}>
                   <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
                     <div className="col-span-3">
-                      <a className="hover:underline " target={"_blank"} href={event.event_link}>
+                      <a
+                        className="hover:underline "
+                        target={"_blank"}
+                        href={event.event_link}
+                      >
                         {event.event_title}
                       </a>
                     </div>
@@ -102,7 +101,7 @@ function AllEventsSection(props) {
                       <p>{event.event_city}</p>
                     </div>
                     <p>Meetup</p>
-                    <p>16. Mai 2022</p>
+                    <p>{event.event_date}</p>
                   </div>
                 </li>
               ))}

@@ -3,25 +3,20 @@ import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
 import Backdrop from "../../modal/backdrop";
 import ModalSubmitMail from "../../modal/modal-submit-mail";
-import {useState} from "react";
-
+import { useState } from "react";
 
 function HeroSection() {
-
   const [modalIsOpen, setModalisOpen] = useState(false);
-
 
   function openModalHandler() {
     setModalisOpen(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   }
 
   function closeModalHandler() {
     setModalisOpen(false);
-    document.body.style.overflow = 'scroll';
+    document.body.style.overflow = "scroll";
   }
-
-  
 
   return (
     <section>
@@ -35,16 +30,17 @@ function HeroSection() {
           <div class="grid grid-cols-3 gap-0 h-full">
             <div class="col-span-2 flex items-center pr-1.5">
               <p className="text-3xl font-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                aliquam orci nec elit congue sodales a quis erat. Quisque eget
-                est quis orci ornare interdum. Suspendisse tincidunt ligula quis
-                ultrices sollicitudin. Donec aliquam orci nec elit congue
-                sodales a quis erat.{" "}
+                Desci.global provides you an calendar overview of upcoming and past descentralized science events. You can add events to your calendar and submit your own event.
+                Join this schelling point to help extend DeSci to the ends of
+                the globe.{" "}
               </p>
             </div>
             <div class="bg-black text-white ml-2 flex items-center">
               <ul className="w-full mt-6">
-                <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer" onClick={openModalHandler}>
+                <li
+                  className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer"
+                  onClick={openModalHandler}
+                >
                   <div className="w-full text-xl border-solid border-white p-2 border-t border-b ">
                     <href>Subscribe to future events</href>
                   </div>
@@ -57,7 +53,12 @@ function HeroSection() {
                 </li>
                 <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer">
                   <div className="w-full text-xl border-solid border-white p-2 border-b ">
-                    <a href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com" target="_blank">Subscribe to event calendar</a>
+                    <a
+                      href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com"
+                      target="_blank"
+                    >
+                      Subscribe to event calendar
+                    </a>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
                     <div></div>
@@ -72,8 +73,13 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      {modalIsOpen && <ModalSubmitMail onCancle={closeModalHandler} onConfirm={closeModalHandler}/>}
-      {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
+      {modalIsOpen && (
+        <ModalSubmitMail
+          onCancle={closeModalHandler}
+          onConfirm={closeModalHandler}
+        />
+      )}
+      {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </section>
   );
 }

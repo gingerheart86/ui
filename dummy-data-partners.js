@@ -18,8 +18,8 @@ const DUMMY_PARTNERS = [
   {
     id: "3",
     name: "LabDAO",
-    twitter: "@ValleyDAO",
-    Link: "https://www.valleydao.bio/",
+    twitter: "@LabDAO",
+    Link: "https://www.labdao.xyz/",
     image:
       "https://www.labdao.xyz/_app/immutable/assets/labdao-full-2x-a118264c.png",
   },

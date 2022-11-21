@@ -9,15 +9,13 @@ function ContributorsSection() {
     <section className="pb-20">
       <div className="p-4 flex">
         <div className="w-2/4 h-[70%] flex flex-col justify-between">
-          <h2 className="text-4xl pb-10">Contributors</h2>
+          <h2 className="text-4xl pb-10">Contribute</h2>
           <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            aliquam orci nec elit congue sodales a quis erat. Quisque eget est
-            quis orci ornare interdum. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Done aliquam orci nec elit congue sodales a quis
-            erat. Quisque eget est quis orci ornare interdum. Done aliquam orci
-            nec elit congue sodales a quis erat. Quisque eget est quis orci
-            ornare interdum.
+            Contribute to this global movement to uplift the DeSci Ecosystem
+            through connection, events, and resources. Whether you’d be an
+            amazing Github maintainer, event curator, fiscal or in kind sponsor,
+            or regional connector, your skillsets can make a massive impact.
+            Let’s shift the world together.
           </p>
         </div>
       </div>

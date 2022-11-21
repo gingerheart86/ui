@@ -3,8 +3,6 @@ import Backdrop from "../../modal/backdrop";
 import ModalSubmitEvent from "../../modal/modal-submit-event";
 import { useState } from "react";
 
-
-
 function ContributeSection() {
   const [modalIsOpen, setModalisOpen] = useState(false);
 
@@ -20,36 +18,37 @@ function ContributeSection() {
 
   return (
     <section id="contribute">
-      <div className="flex items-center justify-center px-4 py-20 space-x-20">
+      <div className="flex items-top justify-center px-4 py-20 space-x-20">
         <div className="w-full h-full bg-white">
           {" "}
           <div className="h-20 flex items-center">
-            <h2 className="text-2xl text-black">
-              Join us in organizing an event
-            </h2>
+            <h2 className="text-2xl text-black">Organize an Event</h2>
           </div>
           <div className="pt-2 pb-6">
             <p className="text-lg text-descigreyfont">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              aliquam orci nec elit. congue sodales a quis erat. Quisque eget
-              est quis orci ornare interdum. Suspendisse tincidunt ligula quis
-              ultrices solicitudin. Done tincidunt pulvinar nisl, at interdum
-              libero mollis ac. Donec ut dignissim dui. Integer ac est congue,
-              congue velit ut, tempus purus. Donec ut dignissim dui. Integer ac
-              est congue, congue velit. ut, tempus purus..
+              Be part of the movement to extend DeSci to your region. Whether
+              it’s a one off networking event or a multi-day conference you are
+              in a position to bring DeSci to your city.
             </p>
           </div>
           <div>
-            <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6">
-              <a>Explore More</a>
+            <div
+              onClick={openModalHandler}
+              className="w-full hover:cursor-pointer bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6"
+            >
+              <a>Submit an Event</a>
             </div>
             <div className="pt-3">
               <ul>
                 <li>
                   <div className="flex w-full group/edit hover:cursor-pointer">
-                    <div className="h-10 border-solid border-t w-full border-black flex items-center justify-between">
-                      <p>Helpful link #3</p>
-                    </div>
+                    <a
+                      href={"https://www.desci.berlin/"}
+                      target={"_blank"}
+                      className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
+                    >
+                      <p>Inspiration for a Conference</p>
+                    </a>
                     <div className="w-10 h-10 ml-2 bg-desciblue flex items-center justify-center">
                       <div className="group-hover/edit:rotate-45 duration-200">
                         <ArrowUpRight color="white" />
@@ -58,9 +57,13 @@ function ContributeSection() {
                   </div>
                 </li>
                 <div className="flex w-full group/edit hover:cursor-pointer">
-                  <div className="h-10 border-solid border-t w-full border-black flex items-center justify-between">
-                    <p>Helpful link #3</p>
-                  </div>
+                  <a
+                    href="https://twitter.com/Molecule_dao/status/1586003432909033472?s=20&t=b66BvJaQjIP5_bHK20ucAg"
+                    target={"_blank"}
+                    className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
+                  >
+                    <p>Inspiration for Workshops</p>
+                  </a>
                   <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
                     <div className="group-hover/edit:rotate-45 duration-200">
                       <ArrowUpRight color="white" />
@@ -69,9 +72,13 @@ function ContributeSection() {
                 </div>
                 <li>
                   <div className="flex w-full group/edit hover:cursor-pointer">
-                    <div className="h-10 border-solid border-t border-b w-full border-black flex items-center justify-between">
-                      <p>Helpful link #3</p>
-                    </div>
+                    <a
+                      href="https://www.meetup.com/desci-london/"
+                      target={"_blank"}
+                      className="h-10 border-solid border-t border-b w-full border-black flex items-center justify-between"
+                    >
+                      <p>Inspiration for Events</p>
+                    </a>
                     <div className="w-10 h-10 ml-2 bg-black flex items-center justify-center">
                       <div className="group-hover/edit:rotate-45 duration-200">
                         <ArrowUpRight color="white" />
@@ -85,24 +92,22 @@ function ContributeSection() {
         </div>
         <div className="w-full h-full bg-white ">
           <div className="h-20 flex items-center">
-            <h2 className="text-2xl text-black">
-              Contribute to decentralized science
-            </h2>
+            <h2 className="text-2xl text-black">Learn more about DeSci</h2>
           </div>
           <div className="pt-2 pb-6">
             <p className="text-lg text-descigreyfont">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              aliquam orci nec elit. congue sodales a quis erat. Quisque eget
-              est quis orci ornare interdum. Suspendisse tincidunt ligula quis
-              ultrices solicitudin. Done tincidunt pulvinar nisl, at interdum
-              libero mollis ac. Donec ut dignissim dui. Integer ac est congue,
-              congue velit ut, tempus purus. Donec ut dignissim dui. Integer ac
-              est congue, congue velit. ut, tempus purus..
+              DeSci (decentralized science) is an ecosystem of scientists,
+              builders, and supporters laying a new foundation of incentive
+              mechanisms to shift the future of scientific discovery. It’s
+              building towards a future where new and unconventional ideas can
+              flourish by decentralizing access to funding, scientific tools,
+              and communication channels based in transparency, resiliency, and
+              accessibility.
             </p>
           </div>
           <div>
             <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6">
-              <a>Explore More</a>
+              <a ahref="https://ethereum.org/en/desci/" target="_blank">Learn More</a>
             </div>
             <div className="pt-3">
               <ul>
@@ -122,9 +127,9 @@ function ContributeSection() {
                   </div>
                 </li>
                 <div className="flex w-full group/edit hover:cursor-pointer">
-                  <div className="h-10 border-solid border-t w-full border-black flex items-center justify-between">
-                    <p>Join our telegram group</p>
-                  </div>
+                  <a href="https://t.me/BlockchainForScience" target={"_blank"} className="h-10 border-solid border-t w-full border-black flex items-center justify-between">
+                    <div>Telegram Group link</div>
+                  </a>
                   <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
                     <div className="group-hover/edit:rotate-45 duration-200">
                       <ArrowUpRight color="white" />
@@ -148,10 +153,7 @@ function ContributeSection() {
           </div>
         </div>
       </div>
-      {modalIsOpen && (
-        <ModalSubmitEvent onClick={closeModalHandler}
-        />
-      )}
+      {modalIsOpen && <ModalSubmitEvent onClick={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </section>
   );

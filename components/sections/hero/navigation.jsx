@@ -1,7 +1,7 @@
 function Navigation() {
   return (
     <nav>
-      <div class="grid grid-col-6 grid-flow-col gap-4 h-5 items-center text-sm">
+      <div class="lg:grid grid-col-6 grid-flow-col gap-4 h-5 items-center text-sm hidden ">
         <div></div>
         <div className="flex justify-center">
           <a className="ml-4 hover:bg-black hover:text-white hover:ease-in duration-100 p-2" href="#events">

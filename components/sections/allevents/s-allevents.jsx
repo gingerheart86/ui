@@ -6,8 +6,8 @@ function AllEventsSection(props) {
   return (
     <section id="events">
       <div className="p-4 flex items-end pb-10">
-        <div className="w-2/4 h-[70%] flex flex-col justify-between">
-          <h2 className="text-4xl py-10">All Events</h2>
+        <div className="lg:w-2/4 h-[70%] flex flex-col justify-between">
+          <h2 className="lg:text-4xl text-xl py-10">All Events</h2>
           <p className="text-lg">
             DeSci global is the global hub for all DeSci events; a schelling
             point to collect, share, and uplift all DeSci events across the
@@ -16,7 +16,7 @@ function AllEventsSection(props) {
           </p>
         </div>
       </div>
-      <div className="bg-desciblue w-full pr-4 pl-4 h-10 grid grid-cols-6 items-center text-white text-lg">
+      <div className="bg-desciblue w-full pr-4 pl-4 h-10 grid lg:grid-cols-6 grid-cols-2 items-center text-white text-lg">
         <div className="col-span-3">UPCOMING</div>
         <div>LOCATION</div>
         <div>TYPE</div>
@@ -153,6 +153,7 @@ function AllEventsSection(props) {
         </form>
       </div>
     </section>
+    
   );
 }
 

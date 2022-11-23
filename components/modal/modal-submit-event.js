@@ -93,7 +93,7 @@ function ModalSubmitEvent() {
         {/* ##email newsletter */}
 
         <div className="my-14">
-          <form className="" onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             {console.log(errors)}
             <label className=" pb-8 text-[#B1B1B1]" htmlFor="email">
               you Event will be posted after ~ 24 hours

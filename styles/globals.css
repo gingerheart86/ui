@@ -10,6 +10,10 @@ html {
     left: calc(50% - 15rem);
 }
 
+body {
+  word-break: break-word;
+}
+
 
 
 /* style for prev/next button */

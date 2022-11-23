@@ -2,7 +2,6 @@ import { getAllEvents } from "../services/sort-event-data";
 import { getAllEventsDummy } from "../dummy-data";
 
 import HeroSection from "../components/sections/hero/s-hero";
-import FeaturedSection from "../components/sections/featured/s-featured";
 import AllEventsSection from "../components/sections/allevents/s-allevents";
 import ResourcesSectionOne from "../components/sections/resources/s-resources";
 import ResourcesSectionTwo from "../components/sections/resources/s-resources2";
@@ -11,7 +10,8 @@ import ContributeSection from "../components/sections/ contribute/s-contribute";
 import ContributorsSection from "../components/sections/ contribute/s-contributors";
 import PartnerLogoSection from "../components/sections/partners/s-partners";
 import Footer from "../components/sections/footer/footer";
-import Carousel from "../components/sections/featured/carousel";
+import FeaturedSection from "../components/sections/featured/s-featured";
+import FeaturedSectionMobile from "../components/sections/featured/s-featured-mobile";
 
 
 export default function Home(props) {
@@ -21,7 +21,8 @@ export default function Home(props) {
   return (
     <>
       <HeroSection />
-      <Carousel featuredEvents={featuredEvents}/>
+      <FeaturedSection featuredEvents={featuredEvents}/>
+      <FeaturedSectionMobile featuredEvents={featuredEvents}/>
       <AllEventsSection upComingEvents={upcomingEventsAsc} pastEvents={pastEventsDesc}/>
       <ResourcesSectionOne />
       <ResourcesSectionTwo />

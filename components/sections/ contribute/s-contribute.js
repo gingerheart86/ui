@@ -1,10 +1,12 @@
 import ArrowUpRight from "../../icons/ArrowUpRight";
 import Backdrop from "../../modal/backdrop";
 import ModalSubmitEvent from "../../modal/modal-submit-event";
+import ModalSubmitMail from "../../modal/modal-submit-mail";
 import { useState } from "react";
 
 function ContributeSection() {
   const [modalIsOpen, setModalisOpen] = useState(false);
+  const [emailIsOpen, setEmailisOpen] = useState(false);
 
   function openModalHandler() {
     setModalisOpen(true);
@@ -16,15 +18,24 @@ function ContributeSection() {
     document.body.style.overflow = "scroll";
   }
 
+  function openEmailHandler() {
+    setEmailisOpen(true);
+    document.body.style.overflow = "hidden";
+  }
+  function closeEmailHandler() {
+    setEmailisOpen(false);
+    document.body.style.overflow = "scroll";
+  }
+
   return (
     <section id="contribute">
       <div className="flex items-top justify-center px-4 py-20 space-x-20">
         <div className="w-full h-full bg-white">
           {" "}
-          <div className="h-20 flex items-center">
+          <div className="h-20  flex items-center">
             <h2 className="text-2xl text-black">Organize an Event</h2>
           </div>
-          <div className="pt-2 pb-6">
+          <div className="pt-2 pb-6 h-[10.7rem]">
             <p className="text-lg text-descigreyfont">
               Be part of the movement to extend DeSci to your region. Whether
               it’s a one off networking event or a multi-day conference you are
@@ -48,12 +59,13 @@ function ContributeSection() {
                       className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
                     >
                       <p>Inspiration for a Conference</p>
-                    </a>
-                    <div className="w-10 h-10 ml-2 bg-desciblue flex items-center justify-center">
-                      <div className="group-hover/edit:rotate-45 duration-200">
-                        <ArrowUpRight color="white" />
+
+                      <div className="w-10 h-10 ml-2 bg-desciblue flex items-center justify-center">
+                        <div className="group-hover/edit:rotate-45 duration-200">
+                          <ArrowUpRight color="white" />
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </li>
                 <div className="flex w-full group/edit hover:cursor-pointer">
@@ -63,12 +75,13 @@ function ContributeSection() {
                     className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
                   >
                     <p>Inspiration for Workshops</p>
-                  </a>
-                  <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
-                    <div className="group-hover/edit:rotate-45 duration-200">
-                      <ArrowUpRight color="white" />
+
+                    <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
+                      <div className="group-hover/edit:rotate-45 duration-200">
+                        <ArrowUpRight color="white" />
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <li>
                   <div className="flex w-full group/edit hover:cursor-pointer">
@@ -78,12 +91,13 @@ function ContributeSection() {
                       className="h-10 border-solid border-t border-b w-full border-black flex items-center justify-between"
                     >
                       <p>Inspiration for Events</p>
-                    </a>
-                    <div className="w-10 h-10 ml-2 bg-black flex items-center justify-center">
-                      <div className="group-hover/edit:rotate-45 duration-200">
-                        <ArrowUpRight color="white" />
+
+                      <div className="w-10 h-10 ml-2 bg-black flex items-center justify-center">
+                        <div className="group-hover/edit:rotate-45 duration-200">
+                          <ArrowUpRight color="white" />
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </li>
               </ul>
@@ -107,7 +121,9 @@ function ContributeSection() {
           </div>
           <div>
             <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6">
-              <a ahref="https://ethereum.org/en/desci/" target="_blank">Learn More</a>
+              <a ahref="https://ethereum.org/en/desci/" target="_blank">
+                Learn More
+              </a>
             </div>
             <div className="pt-3">
               <ul>
@@ -127,17 +143,25 @@ function ContributeSection() {
                   </div>
                 </li>
                 <div className="flex w-full group/edit hover:cursor-pointer">
-                  <a href="https://t.me/BlockchainForScience" target={"_blank"} className="h-10 border-solid border-t w-full border-black flex items-center justify-between">
+                  <a
+                    href="https://t.me/BlockchainForScience"
+                    target={"_blank"}
+                    className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
+                  >
                     <div>Telegram Group link</div>
-                  </a>
-                  <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
-                    <div className="group-hover/edit:rotate-45 duration-200">
-                      <ArrowUpRight color="white" />
+
+                    <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
+                      <div className="group-hover/edit:rotate-45 duration-200">
+                        <ArrowUpRight color="white" />
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <li>
-                  <div className="flex w-full group/edit hover:cursor-pointer">
+                  <div
+                    className="flex w-full group/edit hover:cursor-pointer"
+                    onClick={openEmailHandler}
+                  >
                     <div className="h-10 border-solid border-t border-b w-full border-black flex items-center justify-between">
                       <p>Get in touch with our team</p>
                     </div>
@@ -153,6 +177,9 @@ function ContributeSection() {
           </div>
         </div>
       </div>
+
+      {emailIsOpen && <ModalSubmitMail />}
+      {emailIsOpen && <Backdrop onClick={closeEmailHandler} />}
       {modalIsOpen && <ModalSubmitEvent onClick={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </section>

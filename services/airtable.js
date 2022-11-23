@@ -60,3 +60,21 @@ export async function airtablePostEvent(data) {
        return record.getId();
       });
 }
+
+
+export async function airtablePostEmail(data) {
+
+  const {name, email} = data;
+
+  await base('Emails').create({
+      "fldis9mH2C4LhJD6o": name,
+      "fldw9fd9fccgs0Y69": email
+
+    }, function(err, record) {
+      if (err) {
+        console.error(err);
+        return err;
+      }
+     return record.getId();
+    });
+}

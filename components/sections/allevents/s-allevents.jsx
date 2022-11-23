@@ -17,9 +17,9 @@ function AllEventsSection(props) {
         </div>
       </div>
       <div className="bg-desciblue w-full pr-4 pl-4 h-10 grid lg:grid-cols-6 grid-cols-2 items-center text-white text-lg">
-        <div className="col-span-3">UPCOMING</div>
-        <div>LOCATION</div>
-        <div>TYPE</div>
+        <div className="lg:col-span-3">UPCOMING</div>
+        <div className="lg:block hidden">LOCATION</div>
+        <div className="lg:block hidden">TYPE</div>
         <div className="">DATE</div>
       </div>
       <div className="pt-4 pb-4">
@@ -36,8 +36,8 @@ function AllEventsSection(props) {
 
             return (
               <li key={event.id}>
-                <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                  <div className="col-span-2">
+                <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 items-center lg:text-2xl text-xs bg-red-200">
+                  <div className="col-span-2 bg-green-200">
                     <a
                       className="hover:underline "
                       target={"_blank"}
@@ -46,23 +46,23 @@ function AllEventsSection(props) {
                       {event.event_title}
                     </a>
                   </div>
-                  <div>
+                  <div className="lg:block hidden">
                     {" "}
-                    <AddToCalendarButton calendarEvent={CALENDAR_EVENT} />
+                    <AddToCalendarButton calendarEvent={CALENDAR_EVENT} buttonText={"Add to Calendar"}/>
                   </div>
                   {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
-                  <div className="flex items-center">
+                  <div className="items-center lg:flex hidden">
                     <img
                       className="h-5 w-5 mr-2 rounded-full"
                       src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
                       alt=""
                       variant="flag"
                     ></img>
-                    <p>{event.event_city}</p>
+                    <p className="lg:block hidden">{event.event_city}</p>
                   </div>
-                  <p>{event.meetup_type}</p>
-                  <p>16. November 2022</p>
+                  <p className="lg:block hidden">{event.meetup_type}</p>
+                  <p>{event.event_gmt_date}</p>
                 </div>
               </li>
             );

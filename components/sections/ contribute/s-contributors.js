@@ -6,9 +6,9 @@ function ContributorsSection() {
   const contributors = getAllContributors();
 
   return (
-    <section className="pb-20">
-      <div className="p-4 flex">
-        <div className="w-2/4 h-[70%] flex flex-col justify-between">
+    <section className="pb-20 lg:mt-0 mt-20">
+      <div className="lg:p-4 p-2 flex">
+        <div className="lg:w-2/4 lg:h-[70%] flex flex-col justify-between">
           <h2 className="text-4xl pb-10">Contribute</h2>
           <p className="text-lg">
             Contribute to this global movement to uplift the DeSci Ecosystem
@@ -20,7 +20,7 @@ function ContributorsSection() {
         </div>
       </div>
       <ul>
-        <div className="flex flex-wrap p-4">
+        <div className="flex flex-wrap  justify-center lg:mt-0 mt-8 lg:p-4">
           {contributors.map((contributor) => (
             <li className="mr-4 mb-4" key={contributor.id}>
               <a

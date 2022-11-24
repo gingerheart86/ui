@@ -7,9 +7,9 @@ function PartnerLogoSection() {
 
   return (
     <section id="partners">
-      <div className="p-4 flex">
-        <div className="w-2/4 h-[70%] flex flex-col justify-between">
-          <h2 className="text-4xl pb-10">In Participation with</h2>
+      <div className="lg:p-4 p-2">
+        <div className="lg:w-2/4 h-[70%] flex  flex-col justify-between ">
+          <h2 className="lg:text-4xl text-2xl pb-10">In Participation with</h2>
         </div>
       </div>
       <ul>

@@ -28,7 +28,7 @@ function EmailandEventCalForm() {
 
   return (
     <>
-      <div className="p-4">
+      <div className="lg:px-4 px-2 lg:py-20 py-10">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="mb-5 text-[#B1B1B1]" htmlFor="email">
             GET THE LATEST DESCI NEWS
@@ -48,7 +48,7 @@ function EmailandEventCalForm() {
           </div>
         </form>
       </div>
-      <div className="p-4">
+      <div className="lg:p-4 p-2">
         <form>
         {console.log(errors)}
           <label className="mb-5 text-[#B1B1B1]" htmlFor="email">

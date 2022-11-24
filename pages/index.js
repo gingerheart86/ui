@@ -3,8 +3,8 @@ import { getAllEventsDummy } from "../dummy-data";
 
 import HeroSection from "../components/sections/hero/s-hero";
 import AllEventsSection from "../components/sections/allevents/s-allevents";
-import ResourcesSectionOne from "../components/sections/resources/s-resources";
-import ResourcesSectionTwo from "../components/sections/resources/s-resources2";
+import ResourcesSectionOne from "../components/sections/resources/s-resources-1";
+import ResourcesSectionTwo from "../components/sections/resources/s-resources-2";
 import VideoSection from "../components/sections/videos/sectionvideos";
 import ContributeSection from "../components/sections/ contribute/s-contribute";
 import ContributorsSection from "../components/sections/ contribute/s-contributors";
@@ -35,7 +35,7 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const { upcomingEventsAsc, pastEventsDesc, featuredEvents } = await getAllEvents();
 
   upcomingEventsAsc.forEach((event) => {
@@ -57,12 +57,21 @@ export async function getStaticProps(context) {
       event.event_local_date
     ).toLocaleDateString(undefined, {
       year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
+      month: "long",
+      day: "numeric"
     });
   });
+
+  featuredEvents.forEach((event) => {
+    event.event_date = new Date(
+      event.event_date
+    ).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  });
+  
 
   if (!pastEventsDesc) {
     return {

@@ -1,9 +1,10 @@
-import RoundArrowLeft from "../../icons/RoundArrowLeft";
-import RoundArrowRight from "../../icons/RoundArrowRight";
-import { getFeaturedEvents } from "../../../dummy-data";
+
 
 function FeaturedSectionMobile(props) {
   const { featuredEvents } = props;
+
+console.log(featuredEvents)
+
 
   return (
     <section className="lg:hidden">
@@ -45,7 +46,7 @@ function FeaturedSectionMobile(props) {
                 <li>
                   <div className="h-10 border-solid border-t border-black flex items-center justify-between">
                     <p>Date</p>
-                    <date>{featuredEvents[0].event_gmt_date}</date>
+                    <date>{featuredEvents[0].event_date}</date>
                   </div>
                 </li>
                 <li>

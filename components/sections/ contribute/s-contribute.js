@@ -29,14 +29,14 @@ function ContributeSection() {
 
   return (
     <section id="contribute">
-      <div className="flex items-top justify-center px-4 py-20 space-x-20">
+      <div className="flex lg:flex-row flex-col items-top justify-center lg:px-4 px-2 lg:py-20 lg:space-x-20">
         <div className="w-full h-full bg-white">
           {" "}
           <div className="h-20  flex items-center">
             <h2 className="text-2xl text-black">Organize an Event</h2>
           </div>
           <div className="pt-2 pb-6 h-[10.7rem]">
-            <p className="text-lg text-descigreyfont">
+            <p className="lg:text-lg text-descigreyfont">
               Be part of the movement to extend DeSci to your region. Whether
               it’s a one off networking event or a multi-day conference you are
               in a position to bring DeSci to your city.
@@ -104,12 +104,12 @@ function ContributeSection() {
             </div>
           </div>
         </div>
-        <div className="w-full h-full bg-white ">
+        <div className="w-full h-full bg-white lg:mt-0 mt-20 ">
           <div className="h-20 flex items-center">
             <h2 className="text-2xl text-black">Learn more about DeSci</h2>
           </div>
           <div className="pt-2 pb-6">
-            <p className="text-lg text-descigreyfont">
+            <p className="lg:text-lg text-descigreyfont">
               DeSci (decentralized science) is an ecosystem of scientists,
               builders, and supporters laying a new foundation of incentive
               mechanisms to shift the future of scientific discovery. It’s

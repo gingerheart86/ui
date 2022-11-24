@@ -6,7 +6,7 @@ function AllEventsSection(props) {
 
   return (
     <section id="events">
-      <div className="p-4 flex items-end pb-10">
+      <div className="lg:px-4 px-2 lg:py-40 py-20 flex items-end">
         <div className="lg:w-2/4 h-[70%] flex flex-col justify-between">
           <h2 className="lg:text-4xl text-xl py-10">
             All Events in your local time{" "}
@@ -19,7 +19,7 @@ function AllEventsSection(props) {
           </p>
         </div>
       </div>
-      <div className="lg:bg-desciblue bg-descigrey w-full pr-4 pl-4 h-10 grid lg:grid-cols-6 grid-cols-2 items-center lg:text-white text-lg">
+      <div className="lg:bg-desciblue bg-descigrey w-full lg:px-4 px-2 h-10 grid lg:grid-cols-6 grid-cols-2 items-center lg:text-white text-lg">
         <div className="lg:col-span-3 ">UPCOMING</div>
         <div className="lg:block hidden">LOCATION</div>
         <div className="lg:block hidden">TYPE</div>
@@ -45,10 +45,10 @@ function AllEventsSection(props) {
 
             return (
               <li key={event.id}>
-                <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-2xl text-xs">
-                  <div className="col-span-2">
+                <div className="lg:h-10 h-12 w-full lg:px-4  px-2 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-2xl text-l leading-4">
+                  <div className="col-span-2 ">
                     <a
-                      className="hover:underline"
+                      className="lg:hover:underline lg:font-normal font-medium"
                       target={"_blank"}
                       href={event.event_link}
                     >
@@ -78,15 +78,17 @@ function AllEventsSection(props) {
                   </div>
                   <p className="lg:block hidden">{event.meetup_type}</p>
                   {event.meetup_type == "To be Finalized" ? (
-                    <p className="lg:block hidden">{month} {year}</p>
+                    <p className="lg:block hidden">
+                      {month} {year}
+                    </p>
                   ) : (
                     <p className="lg:block hidden">{event.event_local_date}</p>
                   )}
 
-                  <div className="lg:hidden flex justify-end col-span-2">
+                  <div className="lg:hidden text-l  flex justify-end col-span-2">
                     {" "}
                     {event.meetup_type == "To be Finalized" ? (
-                      <p className="block lg:hidden">To be Finalized</p>
+                      <p className="block lg:hidden text-s">To be Finalized</p>
                     ) : (
                       <AddToCalendarButton
                         calendarEvent={CALENDAR_EVENT}
@@ -112,32 +114,35 @@ function AllEventsSection(props) {
           <ul>
             <div className="pt-4 pb-4 text-descigreyfont">
               <ul>
-                {pastEvents.map((event) => (
-                  <li key={event.id}>
-                    <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                      <div className="col-span-3">
-                        <a
-                          className="hover:underline "
-                          target={"_blank"}
-                          href={event.event_link}
-                        >
-                          {event.event_title}
-                        </a>
+                {pastEvents.map((event) => {
+
+                  return (
+                    <li key={event.id}>
+                      <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
+                        <div className="col-span-3">
+                          <a
+                            className="hover:underline "
+                            target={"_blank"}
+                            href={event.event_link}
+                          >
+                            {event.event_title}
+                          </a>
+                        </div>
+                        <div className="flex items-center grayscale">
+                          <img
+                            className="h-5 w-5 mr-2 rounded-full"
+                            src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
+                            alt=""
+                            variant="flag"
+                          ></img>
+                          <p>{event.event_city}</p>
+                        </div>
+                        <p>Meetup</p>
+                        <p>{event.event_local_date}</p>
                       </div>
-                      <div className="flex items-center grayscale">
-                        <img
-                          className="h-5 w-5 mr-2 rounded-full"
-                          src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
-                          alt=""
-                          variant="flag"
-                        ></img>
-                        <p>{event.event_city}</p>
-                      </div>
-                      <p>Meetup</p>
-                      <p>{event.event_date}</p>
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </ul>

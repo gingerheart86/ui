@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center" style="margin-top: 1em; margin-bottom: 3em;">
+  <a href="https://desci.global"><img alt="desci global logo" src="./desci-global.png" alt="desci.global" width="200"></a>
+  <h1>Welcome 👋🌐🔬</h1>
+</div>
 
-First, run the development server:
+This is the repo for the [desci.global](https://desci.global) website, a resource for the DeSci community. The purpose of the site is to _“Be the best overview of decentralized science events for our growing global community"_.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[desci.global](https://desci.global/) is kept up to date by community members who submit upcoming events. If you are interested to support, you can make a pull request here or submit a desci event via the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<div align="center" style="margin-top: 1em; margin-bottom: 3em;">
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  <h1>How to add an event?</h1>
+</div>
 
-## Learn More
+You can make a event submission on the website and email johannes[at]molecule.to if you have questions, or make a pull request on github if you want to improve the page. Desci.Global is a next.js (react) app with tailwind as CSS lib. To get the page working on your local machiene, you will need the airtable api key, email me at johannes@molecule.to and we will set you up in no time.
 
-To learn more about Next.js, take a look at the following resources:
+*Initiated and maintainted with love by the [Molecule team 💙](https://www.molecule.to/about-us)*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

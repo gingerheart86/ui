@@ -37,6 +37,12 @@ function AllEventsSection(props) {
               address: event.full_address,
             };
 
+            const month = CALENDAR_EVENT.startDate.toLocaleString("default", {
+              month: "long",
+            });
+
+            const year = CALENDAR_EVENT.startDate.getFullYear();
+
             return (
               <li key={event.id}>
                 <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-2xl text-xs">
@@ -50,11 +56,14 @@ function AllEventsSection(props) {
                     </a>
                   </div>
                   <div className="lg:block hidden">
-                    {" "}
-                    <AddToCalendarButton
-                      calendarEvent={CALENDAR_EVENT}
-                      buttonText={"Add to Calendar"}
-                    />
+                    {event.meetup_type == "To be Finalized" ? (
+                      ""
+                    ) : (
+                      <AddToCalendarButton
+                        calendarEvent={CALENDAR_EVENT}
+                        buttonText={"Add to Calendar"}
+                      />
+                    )}
                   </div>
                   {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
@@ -68,13 +77,22 @@ function AllEventsSection(props) {
                     <p className="lg:block hidden">{event.event_city}</p>
                   </div>
                   <p className="lg:block hidden">{event.meetup_type}</p>
-                  <p className="lg:block hidden">{event.event_local_date}</p>
+                  {event.meetup_type == "To be Finalized" ? (
+                    <p className="lg:block hidden">{month} {year}</p>
+                  ) : (
+                    <p className="lg:block hidden">{event.event_local_date}</p>
+                  )}
+
                   <div className="lg:hidden flex justify-end col-span-2">
                     {" "}
-                    <AddToCalendarButton
-                      calendarEvent={CALENDAR_EVENT}
-                      buttonText={event.event_local_date}
-                    />
+                    {event.meetup_type == "To be Finalized" ? (
+                      <p className="block lg:hidden">To be Finalized</p>
+                    ) : (
+                      <AddToCalendarButton
+                        calendarEvent={CALENDAR_EVENT}
+                        buttonText={event.event_local_date}
+                      />
+                    )}
                   </div>
                 </div>
               </li>
@@ -125,7 +143,7 @@ function AllEventsSection(props) {
           </ul>
         </div>
       </div>
-      <EmailandEventCalForm/>
+      <EmailandEventCalForm />
     </section>
   );
 }

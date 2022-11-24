@@ -40,10 +40,28 @@ export async function getStaticProps(context) {
 
   upcomingEventsAsc.forEach((event) => {
     event.event_date = event.event_date.toISOString().substring(0, 10);
+    event.event_local_date = new Date(
+      event.event_local_date
+    ).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    });
   });
 
   pastEventsDesc.forEach((event) => {
     event.event_date = event.event_date.toISOString().substring(0, 10);
+    event.event_local_date = new Date(
+      event.event_local_date
+    ).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    });
   });
 
   if (!pastEventsDesc) {

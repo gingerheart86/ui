@@ -1,10 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
-
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from 'react-places-autocomplete';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
 
 
@@ -17,15 +12,13 @@ export default class LocationSearchInput extends React.Component {
   }
 
 
-
-
 // nach unten props, nach oben events
  
   handleChange = address => {
     this.setState({ address });
   };
 
-  handleSelect = (address, suggestion) => {
+  handleSelect = (address) => {
    this.setState({ address })
    this.props.setAddress({address})
   }
@@ -47,8 +40,8 @@ export default class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Search Places ...',
-                className: 'location-search-input',
+                placeholder: 'Search Event Locations and Addresses ...',
+                className: 'form-input block w-[97%] px-0.5 border-0 border-b border-black focus:ring-0 focus:border-black',
               })}
             />
             <div className="autocomplete-dropdown-container">

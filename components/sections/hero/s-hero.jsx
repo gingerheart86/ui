@@ -1,9 +1,9 @@
 import ArrowDown from "../../icons/ArrowDown";
 import ArrowDownRight from "../../icons/ArrowUpRight";
 import Navigation from "./navigation";
-import Backdrop from "../../modal/backdrop";
-import ModalSubmitMail from "../../modal/modal-submit-mail";
-import ModalSubmitEvent from "../../modal/modal-submit-event";
+import Backdrop from "../../modal-and-forms/backdrop";
+import ModalSubmitMail from "../../modal-and-forms/modal-submit-mail";
+import ModalSubmitEvent from "../../modal-and-forms/modal-submit-event";
 
 import { useState } from "react";
 

@@ -1,4 +1,5 @@
 import AddToCalendarButton from "./AddToCalendarButton/AddToCalendarButton";
+import EmailandEventCalForm from "../../modal-and-forms/email-event-cal-form";
 
 function AllEventsSection(props) {
   const { upComingEvents, pastEvents } = props;
@@ -7,7 +8,9 @@ function AllEventsSection(props) {
     <section id="events">
       <div className="p-4 flex items-end pb-10">
         <div className="lg:w-2/4 h-[70%] flex flex-col justify-between">
-          <h2 className="lg:text-4xl text-xl py-10">All Events</h2>
+          <h2 className="lg:text-4xl text-xl py-10">
+            All Events in your local time{" "}
+          </h2>
           <p className="text-lg">
             DeSci global is the global hub for all DeSci events; a schelling
             point to collect, share, and uplift all DeSci events across the
@@ -16,11 +19,11 @@ function AllEventsSection(props) {
           </p>
         </div>
       </div>
-      <div className="bg-desciblue w-full pr-4 pl-4 h-10 grid lg:grid-cols-6 grid-cols-2 items-center text-white text-lg">
-        <div className="lg:col-span-3">UPCOMING</div>
+      <div className="lg:bg-desciblue bg-descigrey w-full pr-4 pl-4 h-10 grid lg:grid-cols-6 grid-cols-2 items-center lg:text-white text-lg">
+        <div className="lg:col-span-3 ">UPCOMING</div>
         <div className="lg:block hidden">LOCATION</div>
         <div className="lg:block hidden">TYPE</div>
-        <div className="">DATE</div>
+        <div className="lg:block flex justify-end">DATE</div>
       </div>
       <div className="pt-4 pb-4">
         <ul>
@@ -36,10 +39,10 @@ function AllEventsSection(props) {
 
             return (
               <li key={event.id}>
-                <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 items-center lg:text-2xl text-xs bg-red-200">
-                  <div className="col-span-2 bg-green-200">
+                <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-2xl text-xs">
+                  <div className="col-span-2">
                     <a
-                      className="hover:underline "
+                      className="hover:underline"
                       target={"_blank"}
                       href={event.event_link}
                     >
@@ -48,7 +51,10 @@ function AllEventsSection(props) {
                   </div>
                   <div className="lg:block hidden">
                     {" "}
-                    <AddToCalendarButton calendarEvent={CALENDAR_EVENT} buttonText={"Add to Calendar"}/>
+                    <AddToCalendarButton
+                      calendarEvent={CALENDAR_EVENT}
+                      buttonText={"Add to Calendar"}
+                    />
                   </div>
                   {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
@@ -62,98 +68,65 @@ function AllEventsSection(props) {
                     <p className="lg:block hidden">{event.event_city}</p>
                   </div>
                   <p className="lg:block hidden">{event.meetup_type}</p>
-                  <p>{event.event_gmt_date}</p>
+                  <p className="lg:block hidden">{event.event_local_date}</p>
+                  <div className="lg:hidden flex justify-end col-span-2">
+                    {" "}
+                    <AddToCalendarButton
+                      calendarEvent={CALENDAR_EVENT}
+                      buttonText={event.event_local_date}
+                    />
+                  </div>
                 </div>
               </li>
             );
           })}
         </ul>
       </div>
-      <div className="bg-descigrey w-full mt-5 pr-4 pl-4 h-10 grid grid-cols-6 items-center text-lg">
-        <div className="col-span-3">PREVIOUS</div>
-        <div>LOCATION</div>
-        <div>TYPE</div>
-        <div className="">DATE</div>
-      </div>
-      <div className="pt-4 pb-4">
-        <ul>
-          <div className="pt-4 pb-4 text-descigreyfont">
-            <ul>
-              {pastEvents.map((event) => (
-                <li key={event.id}>
-                  <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
-                    <div className="col-span-3">
-                      <a
-                        className="hover:underline "
-                        target={"_blank"}
-                        href={event.event_link}
-                      >
-                        {event.event_title}
-                      </a>
+      {/*  . here invisible on mobile */}
+      <div className="hidden lg:block">
+        <div className="bg-descigrey w-full mt-5 pr-4 pl-4 h-10 grid grid-cols-6 items-center text-lg">
+          <div className="col-span-3">PREVIOUS</div>
+          <div>LOCATION</div>
+          <div>TYPE</div>
+          <div className="">DATE</div>
+        </div>
+        <div className="pt-4 pb-4">
+          <ul>
+            <div className="pt-4 pb-4 text-descigreyfont">
+              <ul>
+                {pastEvents.map((event) => (
+                  <li key={event.id}>
+                    <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
+                      <div className="col-span-3">
+                        <a
+                          className="hover:underline "
+                          target={"_blank"}
+                          href={event.event_link}
+                        >
+                          {event.event_title}
+                        </a>
+                      </div>
+                      <div className="flex items-center grayscale">
+                        <img
+                          className="h-5 w-5 mr-2 rounded-full"
+                          src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
+                          alt=""
+                          variant="flag"
+                        ></img>
+                        <p>{event.event_city}</p>
+                      </div>
+                      <p>Meetup</p>
+                      <p>{event.event_date}</p>
                     </div>
-                    <div className="flex items-center grayscale">
-                      <img
-                        className="h-5 w-5 mr-2 rounded-full"
-                        src={`/images/flags/${event.event_country.toLowerCase()}.svg`}
-                        alt=""
-                        variant="flag"
-                      ></img>
-                      <p>{event.event_city}</p>
-                    </div>
-                    <p>Meetup</p>
-                    <p>{event.event_date}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ul>
+        </div>
       </div>
-      <div className="p-4">
-        <form className="" action="/send-data-here" method="post">
-          <label className="mb-5 text-[#B1B1B1]" htmlFor="email">
-            SIGNUP FOR FUTURE EVENTS
-          </label>
-          <div className="flex justify-between border-solid border-b border-black mr-[3%]">
-            <input
-              type="email"
-              className="w-[80%] h-10 placeholder:text-black placeholder:text-2xl focus:outline-none focus:placeholder:opacity-0"
-              placeholder="your@email.com"
-              id="first"
-              name="first"
-            />
-            <button type="submit" className="text-2xl">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-      <div className="p-4">
-        <form className="" action="/send-data-here" method="post">
-          <label className="mb-5 text-[#B1B1B1]" htmlFor="email">
-            SUBSCRIBE TO CALENDAR
-          </label>
-          <div className="flex justify-between border-solid border-b border-black mr-[3%]">
-            <input
-              type="email"
-              className="w-[80%] h-10 placeholder:text-black placeholder:text-2xl focus:outline-none"
-              placeholder="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2IQ6uZjtq2x3IEGTwDU2JTJ2u&."
-              id="first"
-              name="first"
-            />
-            <a
-              href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com"
-              target="_blank"
-              type="submit"
-              className="text-2xl bg-white"
-            >
-              Add
-            </a>
-          </div>
-        </form>
-      </div>
+      <EmailandEventCalForm/>
     </section>
-    
   );
 }
 

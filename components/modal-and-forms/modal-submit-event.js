@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import CountrySelector from "./CountrySelect";
+// import CountrySelector from "./CountrySelect";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import LocationSearchInput from "./EventLocationInput";
-
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  getLatLng,
-} from "react-places-autocomplete";
+import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 function ModalSubmitEvent() {
   const schema = yup
@@ -24,8 +20,6 @@ function ModalSubmitEvent() {
     })
     .required();
 
-
-  const [country, setCountry] = useState("");
   const [latLng, setlatLng] = useState("");
   const [timeZone, setTimeZone] = useState("");
   const [address, setAddress] = useState("");
@@ -61,14 +55,14 @@ function ModalSubmitEvent() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
-    console.log(data)
+    console.log(data);
     data.event_address = address;
     data.event_timezone = timeZone;
     const date = new Date(data.event_date);
     data.event_date = date.toISOString();
     alert(data.event_date);
 
-   fetch("/api/postEvent", {
+    fetch("/api/postEvent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -176,16 +170,13 @@ function ModalSubmitEvent() {
             {/* <div className="flex justify-between border-solid border-b border-black mr-[3%]">
               <CountrySelector onChange={getCountry} />
             </div> */}
-            <div className="flex justify-between border-solid border-b border-black mr-[3%]">
-              {/* <TimeZone onChange={getData} /> */}
-            </div>
             <LocationSearchInput setAddress={getAddress} />
-            <button type="submit"  className="text-l mt-5">
+            <button type="submit" className="text-l mt-5">
               {isSubmitting ? "Submittin" : "Submit"}
             </button>
           </form>
         </div>
-      </div>  
+      </div>
     </div>
   );
 }

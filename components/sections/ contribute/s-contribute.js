@@ -1,7 +1,7 @@
 import ArrowUpRight from "../../icons/ArrowUpRight";
-import Backdrop from "../../modal/backdrop";
-import ModalSubmitEvent from "../../modal/modal-submit-event";
-import ModalSubmitMail from "../../modal/modal-submit-mail";
+import Backdrop from "../../modal-and-forms/backdrop";
+import ModalSubmitEvent from "../../modal-and-forms/modal-submit-event";
+import ModalSubmitMail from "../../modal-and-forms/modal-submit-mail";
 import { useState } from "react";
 
 function ContributeSection() {

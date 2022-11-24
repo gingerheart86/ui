@@ -33,10 +33,6 @@ export default function Home(props) {
             address: event.full_address,
           };
 
-          const leDate = new Date(event.event_local_date).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric" })
-
-
-
           return (
             <li key={event.id}>
               <div className="h-10 w-full pr-4 pl-4 grid lg:grid-cols-6 grid-cols-4 items-center lg:text-2xl text-xs bg-red-200">
@@ -49,10 +45,10 @@ export default function Home(props) {
                     {event.event_title}
                   </a>
                 </div>
-                <div className="lg:block hidden col-span-2"> 
-                {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
+                <div className="lg:block hidden col-span-2">
+                  {/* https://codesandbox.io/s/8g6dl?file=/src/AddToCalendarButton/AddToCalendarButton.tsx:0-911 */}
 
-                <p>{leDate}</p>
+                  <p>{event.event_local_date}</p>
                 </div>
               </div>
             </li>
@@ -69,6 +65,15 @@ export async function getStaticProps(context) {
 
   upcomingEventsAsc.forEach((event) => {
     event.event_date = event.event_date.toISOString().substring(0, 10);
+    event.event_local_date = new Date(
+      event.event_local_date
+    ).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    });
   });
 
   pastEventsDesc.forEach((event) => {

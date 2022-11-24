@@ -5,9 +5,13 @@ function ResourcesSectionTwo() {
     <section>
       <div className="h-[100vh] flex items-center p-4 justify-center">
         <div className="h-[80%] w-[74%]">
-          <div class="grid grid-cols-2 grid-rows-4 gap-4 h-[85%]">
-            <div className="row-span-2 bg-[#F5F5F5]">1</div>
-            <a href="https://twitter.com/UltraRareBio/status/1580988333693730821?s=20&t=9eCaWimS9cyzpc-dn4N6GQ" target={"_blank"} className="row-span-3 relative grayscale hover:grayscale-0 duration-100">
+          <div class="h-[85%] hidden">
+            <div className=" bg-[#F5F5F5]">1</div>
+            <a
+              href="https://twitter.com/UltraRareBio/status/1580988333693730821?s=20&t=9eCaWimS9cyzpc-dn4N6GQ"
+              target={"_blank"}
+              className="relative grayscale hover:grayscale-0 duration-100 h-80"
+            >
               <Image
                 src="/images/resources-3.png"
                 layout="fill"
@@ -17,7 +21,7 @@ function ResourcesSectionTwo() {
             <div className="row-span-2">
               {" "}
               <div className="flex">
-                <div className="w-32">
+                <div className="">
                   <h3 className="text-xl">Working Group</h3>
                 </div>
                 <div className="w-full pl-8">
@@ -43,6 +47,10 @@ function ResourcesSectionTwo() {
                 </div>
               </div>
             </div>
+          </div>
+          {/* mobile starts here */}
+          <div class=" h-[85%] w-full bg-red-200 lg:hidden">
+
           </div>
         </div>
       </div>

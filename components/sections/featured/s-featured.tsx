@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import RoundArrowLeft from "../../icons/RoundArrowLeft";
 import RoundArrowRight from "../../icons/RoundArrowRight";
-// import { getFeaturedEvents } from "../../../dummy-data";
+// import { getFeaturedEvents } from "../../../dummy-data"
 
 export default class withCustomStatusArrowsAndIndicators extends Component <any, any>{
   render() {

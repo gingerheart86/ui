@@ -60,7 +60,6 @@ function ModalSubmitEvent(props) {
     data.event_address = address;
     const date = new Date(data.event_date);
     data.event_date = date.toISOString();
-    props.closeModal()
 
     try {
       return await airtablePostEvent(data);

@@ -70,7 +70,7 @@ export default class withCustomStatusArrowsAndIndicators extends Component <any,
       <div>
         <Carousel {...carouselProp}>
           {featuredEvents.map((event) => (
-            <div className="pl-4 h-[38rem] w-full lg:flex hidden" key={event.id}>
+            <div className="pl-4 min-h-[38rem] w-full lg:flex hidden" key={event.id}>
               <div className="w-2/4 pr-4 flex flex-col justify-between">
                 <div className="h-20 flex items-center">
                   <p className="text-4xl text-black">Featured Events</p>

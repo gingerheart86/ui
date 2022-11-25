@@ -3,7 +3,6 @@
 function FeaturedSectionMobile(props) {
   const { featuredEvents } = props;
 
-console.log(featuredEvents)
 
 
   return (

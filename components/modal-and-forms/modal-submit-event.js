@@ -27,7 +27,6 @@ function ModalSubmitEvent(props) {
 
   const getAddress = (a) => {
     setAddress(a.address);
-    console.log(a.address);
   };
 
   useEffect(() => {
@@ -45,9 +44,9 @@ function ModalSubmitEvent(props) {
     // .catch((error) => console.error("Error", error));
   }, [latLng]);
 
-  useEffect(() => {
-    console.log("Here is the Timezone", timeZone);
-  }, [timeZone]);
+  // useEffect(() => {
+  //   console.log("Here is the Timezone", timeZone);
+  // }, [timeZone]);
 
   const {
     register,

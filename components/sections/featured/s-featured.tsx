@@ -107,7 +107,7 @@ export default class withCustomStatusArrowsAndIndicators extends Component <any,
                       <li>
                         <div className="h-10 border-solid border-t border-b border-black flex items-center justify-between">
                           <p>Type</p>
-                          <p>Online</p>
+                          <p>{event.meetup_type}</p>
                         </div>
                       </li>
                     </ul>

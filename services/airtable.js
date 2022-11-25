@@ -2,7 +2,7 @@ import Airtable, { apiKey } from 'airtable';
 
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
-  apiKey: "key2i8JeJqNXIYCxD",
+  apiKey: process.env.AIRTABLE_KEY,
 });
 
 

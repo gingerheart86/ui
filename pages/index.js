@@ -15,7 +15,6 @@ import FeaturedSectionMobile from "../components/sections/featured/s-featured-mo
 
 export default function Home(props) {
   const { upcomingEventsAsc, pastEventsDesc, featuredEvents } = props;
-  const {events} = getAllEventsDummy();
 
   return (
     <>
@@ -27,7 +26,7 @@ export default function Home(props) {
       <ResourcesSectionTwo />
       <VideoSection />
       <ContributeSection />
-      <ContributorsSection events={events}/>
+      <ContributorsSection />
       <PartnerLogoSection />
       <Footer />
     </>

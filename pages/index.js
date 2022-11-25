@@ -1,5 +1,4 @@
 import { getAllEvents } from "../services/sort-event-data";
-import { getAllEventsDummy } from "../dummy-data";
 
 import HeroSection from "../components/sections/hero/s-hero";
 import AllEventsSection from "../components/sections/allevents/s-allevents";

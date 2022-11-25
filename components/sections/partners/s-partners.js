@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getAllPartners } from "../../../dummy-data-partners";
+import { getAllPartners } from "../../../DATA-partners";
 
 function PartnerLogoSection() {
   const partners = getAllPartners();

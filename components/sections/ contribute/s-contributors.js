@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getAllContributors } from "../../../dummy-data-contributor.js";
+import { getAllContributors } from "../../../DATA-contributor.js";
 
 function ContributorsSection() {
   const contributors = getAllContributors();

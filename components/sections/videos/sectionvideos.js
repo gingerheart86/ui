@@ -1,6 +1,6 @@
 import Image from "next/image";
 import VideoIcon from "../../icons/VideoIcon";
-import { getVideos } from "../../../dummy-data-video";
+import { getVideos } from "../../../DATA-video";
 
 function VideoSection() {
   const videos = getVideos();

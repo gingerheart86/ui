@@ -5,8 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import LocationSearchInput from "./EventLocationInput";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+import { airtablePostEvent } from "../../services/airtable";
 
-function ModalSubmitEvent() {
+function ModalSubmitEvent(props) {
   const schema = yup
     .object({
       event_title: yup.string().required().max(80),
@@ -40,8 +41,8 @@ function ModalSubmitEvent() {
       `https://maps.googleapis.com/maps/api/timezone/json?location=${latLng.lat}%2C${latLng.lng}&timestamp=1331161200&key=AIzaSyB4IefstneiNw1cA3bTrhIXFti9IYfVP8A`
     )
       .then((response) => response.json())
-      .then((r) => setTimeZone(r.timeZoneId))
-      .catch((error) => console.error("Error", error));
+      .then((r) => setTimeZone(r.timeZoneId));
+    // .catch((error) => console.error("Error", error));
   }, [latLng]);
 
   useEffect(() => {
@@ -54,21 +55,30 @@ function ModalSubmitEvent() {
     formState: { errors, isSubmitting },
   } = useForm({ resolver: yupResolver(schema) });
 
+  // posting data to Airtable and catching errors
+
   const onSubmit = async (data) => {
-    console.log(data);
     data.event_address = address;
-    data.event_timezone = timeZone;
     const date = new Date(data.event_date);
     data.event_date = date.toISOString();
-    alert(data.event_date);
+    props.closeModal()
 
-    fetch("/api/postEvent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((response) => console.log("Response :", response));
+    try {
+      return await airtablePostEvent(data);
+    } catch (err) {
+      alert("Error posting data to Airtable: ", err);
+    }
+
+    
+    alert("Your Event was submitted, you can close the modal now!");
+
+    // fetch("/api/postEvent", {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // }).then((response) => console.log("Response :", response));
   };
 
   return (

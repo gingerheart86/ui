@@ -2,7 +2,7 @@ import Airtable, { apiKey } from 'airtable';
 
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
-  apiKey: process.env.AIRTABLE_KEY,
+  apiKey: "key2i8JeJqNXIYCxD",
 });
 
 
@@ -54,8 +54,7 @@ export async function airtablePostEvent(data) {
         "fldVXGcr0x25es0jp": event_end_time
       }, function(err, record) {
         if (err) {
-          console.error(err);
-          return err;
+          throw new Error("Error posting event to Airtable")
         }
        return record.getId();
       });

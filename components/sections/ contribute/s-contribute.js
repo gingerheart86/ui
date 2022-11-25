@@ -181,7 +181,7 @@ function ContributeSection() {
 
       {emailIsOpen && <ModalSubmitMail />}
       {emailIsOpen && <Backdrop onClick={closeEmailHandler} />}
-      {modalIsOpen && <ModalSubmitEvent onClick={closeModalHandler} />}
+      {modalIsOpen && <ModalSubmitEvent onClick={closeModalHandler} closeModal={closeModalHandler}/>}
       {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </section>
   );

@@ -19,13 +19,13 @@ console.log(featuredEvents)
             <p>{featuredEvents[0].event_title}</p>
           </div>
           <div className="pt-2 pb-2">
-            <p className="text-lg">
+            <p className="lg:text-lg">
               {featuredEvents[0].event_description}
             </p>
           </div>
           <div>
-            <div className="w-full bg-black text-white h-10 flex items-center my-10 justify-center rounded-full text-xl">
-              <a href={featuredEvents[0].event_link} target={"_blank"}>Explore More</a>
+            <div className="lg:w-full w-[] bg-black text-white lg:h-10 h-8 flex items-center my-8 justify-center rounded-full text-xl">
+              <a href={featuredEvents[0].event_link} target={"_blank"}>Event Website</a>
             </div>
             <div className="">
               <ul>

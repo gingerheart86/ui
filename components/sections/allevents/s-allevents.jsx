@@ -6,7 +6,7 @@ function AllEventsSection(props) {
 
   return (
     <section id="events">
-      <div className="lg:px-4 px-2 lg:py-40 py-20 flex items-end">
+      <div className="lg:px-4 px-2 lg:pt-40 py-20 flex items-end">
         <div className="lg:w-2/4 h-[70%] flex flex-col justify-between">
           <h2 className="lg:text-4xl text-xl py-10">
             All Events in your local time{" "}

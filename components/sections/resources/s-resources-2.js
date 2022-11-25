@@ -22,10 +22,12 @@ function ResourcesSectionTwo() {
             </div>
             <div className="lg:h-3/6 flex lg:flex-row flex-col mt-4">
               {" "}
-              <div className="lg:w-2/6 lg:text-2xl text-xl">Community</div>{" "}
-              <div className="lg:w-4/6">
-                Join the Blockchain for Science community to stay connected with
-                others.
+              <div className="lg:w-2/6 lg:text-2xl text-xl lg:underline">
+                Working Group
+              </div>{" "}
+              <div className="lg:w-4/6 lg:text-sm text-xs">
+                DeSci WG - Check out this working group to get the most up to
+                date alpha on what’s happening across the DeSci ecosystem.
               </div>
             </div>
           </div>
@@ -36,12 +38,12 @@ function ResourcesSectionTwo() {
             <div className="lg:h-5/6 h-[15rem] lg:w-full w-4/6 text-white  ">
               {" "}
               <a
-                href="https://ethereum.org/en/desci/"
+                href="https://twitter.com/UltraRareBio/status/1580988333693730821?s=20&t=9eCaWimS9cyzpc-dn4N6GQ"
                 target={"_blank"}
                 className="relative grayscale hover:grayscale-0 duration-100 h-full"
               >
                 <img
-                  src="/images/resources-1.png"
+                  src="/images/resources-3.png"
                   alt="Image"
                   className="h-full w-full"
                 />
@@ -49,11 +51,12 @@ function ResourcesSectionTwo() {
             </div>
             <div className="lg:h-1/6 flex lg:flex-row flex-col mt-4 lg:items-start items-end">
               {" "}
-              
-              <div className="w-2/6 lg:text-2xl text-xl lg:static relative right-[7.5rem]">Overview</div>{" "}
-              <div className="w-4/6">
-                Explore this summary of decentralized science to better
-                understand what this movement is about.
+              <div className="w-2/6 lg:text-2xl text-xl lg:static relative right-[7.5rem] lg:underline">
+                Landscape
+              </div>{" "}
+              <div className="w-4/6 lg:text-sm text-xs">
+                Explore all of the organizations and sectors that make up the
+                DeSci space.
               </div>
             </div>
           </div>

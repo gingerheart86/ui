@@ -1,4 +1,4 @@
-function VideoIcon() {
+function VideoIcon(props) {
   return (
     <svg
       width="43"

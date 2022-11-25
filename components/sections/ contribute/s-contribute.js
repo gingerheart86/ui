@@ -45,7 +45,7 @@ function ContributeSection() {
           <div>
             <div
               onClick={openModalHandler}
-              className="w-full hover:cursor-pointer bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6"
+              className="w-full hover:cursor-pointer bg-black text-white h-10 flex items-center justify-center rounded-full lg:text-xl text-lg mb-6"
             >
               <a>Submit an Event</a>
             </div>
@@ -120,7 +120,7 @@ function ContributeSection() {
             </p>
           </div>
           <div>
-            <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full text-xl mb-6">
+            <div className="w-full bg-black text-white h-10 flex items-center justify-center rounded-full lg:text-xl text-lg mb-6">
               <a ahref="https://ethereum.org/en/desci/" target="_blank">
                 Learn More
               </a>
@@ -149,6 +149,7 @@ function ContributeSection() {
                     className="h-10 border-solid border-t w-full border-black flex items-center justify-between"
                   >
                     <div>Telegram Group link</div>
+
 
                     <div className="w-10 h-10 ml-2 bg-descired flex items-center justify-center">
                       <div className="group-hover/edit:rotate-45 duration-200">

@@ -57,9 +57,9 @@ function HeroSection() {
                     <href>Submit an Event</href>
                   </div>
                   <div className="w-12 h-12 ml-2 bg-desciblue flex items-center justify-center">
-                    <div className="group-hover/edit:-translate-y-1 duration-200 rotate-180">
+                    <div className="lg:group-hover/edit:rotate-45 duration-200">
                       {" "}
-                      <ArrowDown />{" "}
+                      <ArrowDownRight color="white"/>{" "}
                     </div>
                   </div>
                 </li>
@@ -70,10 +70,10 @@ function HeroSection() {
                   <div className="w-full lg:text-xl lg:font-normal font-semibold border-solid lg:border-white lg:p-2 py-2 border-t border-b ">
                     <href>Subscribe to future events</href>
                   </div>
-                  <div className="w-12 h-12 ml-2 bg-desciblue flex items-center justify-center">
-                    <div className="group-hover/edit:-rotate-90 duration-200">
+                  <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
+                    <div className="lg:group-hover/edit:rotate-45 duration-200">
                       {" "}
-                      <ArrowDown />{" "}
+                      <ArrowDownRight color="white"/>{" "}
                     </div>
                   </div>
                 </li>
@@ -86,11 +86,10 @@ function HeroSection() {
                       Subscribe to event calendar
                     </a>
                   </div>
-                  <div className="w-12 h-12 ml-2 bg-descired flex items-center justify-center">
-                    <div></div>
-                    <div className="group-hover/edit:rotate-45 duration-200">
+                  <div className="w-12 h-12 ml-2 bg-black flex items-center justify-center">
+                    <div className="lg:group-hover/edit:rotate-45 duration-200">
                       {" "}
-                      <ArrowDownRight color="black" />
+                      <ArrowDownRight color="white" />
                     </div>
                   </div>
                 </li>

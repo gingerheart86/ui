@@ -4,6 +4,7 @@ import Navigation from "./navigation";
 import Backdrop from "../../modal-and-forms/backdrop";
 import ModalSubmitMail from "../../modal-and-forms/modal-submit-mail";
 import ModalSubmitEvent from "../../modal-and-forms/modal-submit-event";
+import Image from "next/image";
 
 import { useState } from "react";
 
@@ -32,16 +33,18 @@ function HeroSection() {
 
   return (
     <section>
-      <div className="lg:pt-4 lg:pr-4 lg:pl-4 pl-2 pr-2 lg:h-screen pt-10">
-        <div className="lg:h-3/5">
-          <div className="bg-hero bg-no-repeat lg:h-full lg:w-full bg-cover h-[8rem]">
-            <Navigation />
+      <div className="lg:pt-4 lg:px-4 pl-2 pr-2 lg:h-screen pt-10">
+        <div className="">
+          <div className=" lg:h-auto lg:min-w-[100%] "> 
+            <img src="/images/hero-bg.png" ></img>
+
+            {/* <Navigation /> */}
           </div>
         </div>
         <div className="lg:h-2/5">
           <div class="lg:grid grid-cols-3 gap-0 h-full">
             <div class="col-span-2 flex items-center pr-1.5 py-4">
-              <p className="lg:text-3xl font-normal">
+              <p className="lg:text-2xl font-normal">
                 Desci.global provides you an calendar overview of upcoming and past descentralized science events. You can add events to your calendar and submit your own event.
                 Join this schelling point to help extend DeSci to the ends of
                 the globe.{" "}

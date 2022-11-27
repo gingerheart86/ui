@@ -58,13 +58,13 @@ function EmailandEventCalForm() {
             <input
               type="email"
               className="w-[80%] h-10 placeholder:text-black lg:placeholder:text-2xl focus:outline-none"
-              placeholder="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2IQ6uZjtq2x3IEGTwDU2JTJ2u&."
+              placeholder="https://calendar.google.com/calendar/u/0/r?cid=3lql6qf1smr21uaf4kb7hdfg8btdq6v2@import.calendar.google.com"
               id="first"
               name="first"
              
             />
             <a
-              href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com"
+              href="https://calendar.google.com/calendar/u/0/r?cid=3lql6qf1smr21uaf4kb7hdfg8btdq6v2@import.calendar.google.com"
               target="_blank"
               type="submit"
               className="lg:text-2xl bg-white"

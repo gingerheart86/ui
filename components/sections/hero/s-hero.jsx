@@ -51,7 +51,7 @@ function HeroSection() {
                 the globe.{" "}
               </p>
             </div>
-            <div class="lg:bg-black lg:text-white lg:ml-2 flex items-center lg:pb-0 pb-10">
+            <div class="lg:bg-black lg:text-white lg:ml-2 flex items-center  pb-10">
               <ul className="w-full lg:mt-6 mt-2">
               <li
                   className="w-full flex flex-row group/edit  hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer"
@@ -84,7 +84,7 @@ function HeroSection() {
                 <li className="w-full flex flex-row group/edit hover:bg-white hover:text-black ease-in duration-200 hover:cursor-pointer">
                   <div className="w-full lg:text-xl lg:font-normal font-semibold border-solid lg:border-white lg:p-2 py-2 border-b">
                     <a
-                      href="https://calendar.google.com/calendar/u/0/r?cid=6dd693i2gh2u6930fsospb1g2nhega27@import.calendar.google.com"
+                      href="https://calendar.google.com/calendar/u/0/r?cid=3lql6qf1smr21uaf4kb7hdfg8btdq6v2@import.calendar.google.com"
                       target="_blank"
                     >
                       Subscribe to event calendar

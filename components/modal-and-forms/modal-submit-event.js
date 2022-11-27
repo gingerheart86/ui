@@ -44,9 +44,6 @@ function ModalSubmitEvent(props) {
     // .catch((error) => console.error("Error", error));
   }, [latLng]);
 
-  // useEffect(() => {
-  //   console.log("Here is the Timezone", timeZone);
-  // }, [timeZone]);
 
   const {
     register,
@@ -72,13 +69,6 @@ function ModalSubmitEvent(props) {
     
     alert("Your Event was submitted, you can close the modal now!");
 
-    // fetch("/api/postEvent", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then((response) => console.log("Response :", response));
   };
 
   return (

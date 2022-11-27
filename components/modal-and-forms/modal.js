@@ -1,10 +1,19 @@
-function Modal(props) {
 
-    return (
-      <div className="bg-white p-1 flex items-center calc w-[30rem] z-20 fixed top-[20vh] h-[40rem] shadow-white-500/50">
-        
-      </div>
-    );
-  }
+function Modal(props) {
   
-  export default Modal;
+
+  return (
+    <div
+      className="bg-white p-4 lg:flex flex-col items-center calc w-[30rem] z-40 fixed top-[5vh] shadow-white-500/50 "
+      id="modal"
+    >
+ 
+      <div className="h-full w-full">
+      {props.children}
+      </div>
+      </div>
+
+  );
+}
+
+export default Modal;

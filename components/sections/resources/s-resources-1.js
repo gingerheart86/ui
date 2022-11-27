@@ -17,7 +17,7 @@ function ResourcesSectionOne() {
                 <img
                   src="/images/resources-1.png"
                   alt="Image"
-                  className="h-full w-full"
+                  layout="fill" objectFit="cover"
                 />
               </a>
             </div>

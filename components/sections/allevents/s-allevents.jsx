@@ -45,7 +45,7 @@ function AllEventsSection(props) {
 
             return (
               <li key={event.id}>
-                <div className="lg:h-10 h-12 w-full lg:px-4  px-2 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-2xl text-l leading-4">
+                <div className="lg:h-10 h-12 w-full lg:px-4  px-2 grid lg:grid-cols-6 grid-cols-4 lg:items-center lg:text-xl text-l leading-4">
                   <div className="col-span-2 ">
                     <a
                       className="lg:hover:underline lg:font-normal font-medium"
@@ -118,7 +118,7 @@ function AllEventsSection(props) {
 
                   return (
                     <li key={event.id}>
-                      <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-2xl">
+                      <div className="h-10 w-full pr-4 pl-4 grid grid-cols-6 items-center text-xl">
                         <div className="col-span-3">
                           <a
                             className="hover:underline "

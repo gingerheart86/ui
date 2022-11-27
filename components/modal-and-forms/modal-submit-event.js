@@ -60,12 +60,14 @@ function ModalSubmitEvent(props) {
     data.event_address = address;
     const date = new Date(data.event_date);
     data.event_date = date.toISOString();
+    data.event_timezone = timeZone;
+    airtablePostEvent(data);
 
-    try {
-      return await airtablePostEvent(data);
-    } catch (err) {
-      alert("Error posting data to Airtable: ", err);
-    }
+    // try {
+    //   return await airtablePostEvent(data);
+    // } catch (err) {
+    //   alert("Error posting data to Airtable: ", err);
+    // }
 
     
     alert("Your Event was submitted, you can close the modal now!");

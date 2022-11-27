@@ -4,7 +4,7 @@ import Navigation from "./navigation";
 import Backdrop from "../../modal-and-forms/backdrop";
 import ModalSubmitMail from "../../modal-and-forms/modal-submit-mail";
 import ModalSubmitEvent from "../../modal-and-forms/modal-submit-event";
-import Image from "next/image";
+
 
 import { useState } from "react";
 
@@ -33,12 +33,13 @@ function HeroSection() {
 
   return (
     <section>
+       <Navigation />
       <div className="lg:pt-4 lg:px-4 pl-2 pr-2 lg:h-screen pt-10">
         <div className="">
           <div className=" lg:h-auto lg:min-w-[100%] "> 
             <img src="/images/hero-bg.png" ></img>
 
-            {/* <Navigation /> */}
+            {/* */}
           </div>
         </div>
         <div className="lg:h-2/5">

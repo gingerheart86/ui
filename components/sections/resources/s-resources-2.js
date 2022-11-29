@@ -9,7 +9,7 @@ function ResourcesSectionTwo() {
             <div className="lg:h-3/6 h-[15rem] items-end">
               {" "}
               <a
-                href="https://ethereum.org/en/desci/"
+                href="https://t.me/BlockchainForScience"
                 target={"_blank"}
                 className="relative grayscale hover:grayscale-0 duration-100 h-full "
               >

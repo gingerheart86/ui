@@ -7,6 +7,10 @@ const nextConfig = {
   experimental: {
     appDir: false,
   },
+  webpack: (config) => {
+    config.experiments.topLevelAwait = true 
+    return config;
+  },
   swcMinify: true,
   images:  {
     domains: [
